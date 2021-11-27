@@ -1,0 +1,105 @@
+MPLINK 4.47, Linker
+Linker Map File - Created Sun Jun 17 15:03:03 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x0002a0
+.config_2007_RAPIDOMETRO.O       code   0x002007    program   0x000002
+.config_2008_RAPIDOMETRO.O       code   0x002008    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000153      
+                            0x002007    0x002008      
+            341 out of 8455 program addresses used, program memory utilization is 4%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  A_ASCII   0x00000b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\TABLA7SEG.ASM
+                  BIN_DEC   0x0000ad    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                 BOTON_IN   0x000147    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                  DECRE2V   0x00001e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                  DECRE3V   0x00002a    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                DETECCION   0x000053    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                 DIVISION   0x0000de    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                  EJECUTA   0x000133    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                   INICIO   0x000034    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                  LCD_INI   0x000127    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                   MANDAR   0x000139    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                     NEXT   0x00013c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                   REBOTE   0x00014e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                 RECARGA1   0x00004f    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                 RECARGA2   0x000051    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                RECARGA3V   0x000028    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                    RESTA   0x0000e1    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                RESULTADO   0x000069    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+               RESULTADOD   0x0000e9    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                      RSI   0x00009c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                     ST1V   0x000016    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                     ST2V   0x00001c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                     ST3V   0x000026    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                  TEXTORP   0x0000ec    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                TEXTO_VEL   0x00010e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                   TIEMPO   0x000141    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                TIEMPOACT   0x0000bd    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_0056   0x000056    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_0059   0x000059    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_0060   0x000060    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_00A0   0x0000a0    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_00B7   0x0000b7    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_00BB   0x0000bb    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_0148   0x000148    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_014B   0x00014b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  A_ASCII   0x00000b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\TABLA7SEG.ASM
+                     ST1V   0x000016    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                     ST2V   0x00001c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                  DECRE2V   0x00001e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                     ST3V   0x000026    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                RECARGA3V   0x000028    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                  DECRE3V   0x00002a    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\SUBS_TIEMPO.ASM
+                   INICIO   0x000034    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                 RECARGA1   0x00004f    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                 RECARGA2   0x000051    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                DETECCION   0x000053    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_0056   0x000056    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_0059   0x000059    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_0060   0x000060    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                RESULTADO   0x000069    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                      RSI   0x00009c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_00A0   0x0000a0    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                  BIN_DEC   0x0000ad    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_00B7   0x0000b7    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_00BB   0x0000bb    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                TIEMPOACT   0x0000bd    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                 DIVISION   0x0000de    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                    RESTA   0x0000e1    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+               RESULTADOD   0x0000e9    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                  TEXTORP   0x0000ec    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                TEXTO_VEL   0x00010e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                  LCD_INI   0x000127    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                  EJECUTA   0x000133    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                   MANDAR   0x000139    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                     NEXT   0x00013c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                   TIEMPO   0x000141    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                 BOTON_IN   0x000147    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_0148   0x000148    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+             _.org_1_014B   0x00014b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+                   REBOTE   0x00014e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\rapidometro\rapidometro.asm
+
+

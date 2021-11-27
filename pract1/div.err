@@ -1,0 +1,10 @@
+Warning[207] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PRACT1\DIV.ASM 24 : Found label after column 1. (DATO1)
+Warning[207] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PRACT1\DIV.ASM 25 : Found label after column 1. (DATO2)
+Warning[207] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PRACT1\DIV.ASM 26 : Found label after column 1. (CONTADOR)
+Warning[207] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PRACT1\DIV.ASM 27 : Found label after column 1. (RESULTADOM)
+Message[302] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PRACT1\DIV.ASM 39 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PRACT1\DIV.ASM 40 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PRACT1\DIV.ASM 42 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PRACT1\DIV.ASM 43 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PRACT1\DIV.ASM 88 : Using default destination of 1 (file).
+Message[305] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PRACT1\DIV.ASM 105 : Using default destination of 1 (file).

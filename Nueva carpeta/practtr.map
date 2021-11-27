@@ -1,0 +1,95 @@
+MPLINK 4.47, Linker
+Linker Map File - Created Tue Jun 12 21:17:12 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x000156
+     .config_2007_UART_.O       code   0x002007    program   0x000002
+     .config_2008_UART_.O       code   0x002008    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x0000ae      
+                            0x002007    0x002008      
+            176 out of 8455 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  DECRE2V   0x00000d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                  DECRE3V   0x000019    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                  EJECUTA   0x000095    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     FINC   0x000059    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     FINF   0x000042    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEC1   0x00004c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEC2   0x000050    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEC3   0x000054    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEC4   0x000058    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEF0   0x000035    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEF1   0x000039    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEF2   0x00003d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEF3   0x000041    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                   INICIO   0x000069    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     INT1   0x00002c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     INT2   0x000032    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                  LCD_INI   0x000089    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                   MANDAR   0x00009b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     NEXT   0x00009e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                RECARGA3V   0x000017    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                      RSI   0x00002a    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     ST1V   0x000005    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                     ST2V   0x00000b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                     ST3V   0x000015    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                    T25MS   0x0000a9    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                   TIEMPO   0x0000a3    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                  TX_DATO   0x000023    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+             _.org_1_0027   0x000027    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+             _.org_1_005F   0x00005f    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+             _.org_1_0088   0x000088    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     ST1V   0x000005    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                     ST2V   0x00000b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                  DECRE2V   0x00000d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                     ST3V   0x000015    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                RECARGA3V   0x000017    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                  DECRE3V   0x000019    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\SUBS_TIEMPO.ASM
+                  TX_DATO   0x000023    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+             _.org_1_0027   0x000027    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                      RSI   0x00002a    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     INT1   0x00002c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     INT2   0x000032    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEF0   0x000035    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEF1   0x000039    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEF2   0x00003d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEF3   0x000041    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     FINF   0x000042    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEC1   0x00004c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEC2   0x000050    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEC3   0x000054    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    FUEC4   0x000058    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     FINC   0x000059    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+             _.org_1_005F   0x00005f    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                   INICIO   0x000069    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+             _.org_1_0088   0x000088    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                  LCD_INI   0x000089    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                  EJECUTA   0x000095    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                   MANDAR   0x00009b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                     NEXT   0x00009e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                   TIEMPO   0x0000a3    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+                    T25MS   0x0000a9    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\Nueva carpeta\uart_.asm
+
+

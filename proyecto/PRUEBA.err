@@ -1,0 +1,4 @@
+Message[302] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PROYECTO\PRUEBA.ASM 11 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PROYECTO\PRUEBA.ASM 13 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PROYECTO\PRUEBA.ASM 14 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] C:\USERS\JESUS\DOCUMENTS\TAREAS\MICROCONTROLADORES\PROYECTO\PRUEBA.ASM 51 : Found directive in column 1. (END)

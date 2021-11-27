@@ -1,0 +1,63 @@
+MPLINK 4.47, Linker
+Linker Map File - Created Sun May 06 15:19:19 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0000b2
+                   .cinit    romdata   0x000059    program   0x000004
+  .config_2007_ODOMETRO.O       code   0x002007    program   0x000002
+  .config_2008_ODOMETRO.O       code   0x002008    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00005a      
+                            0x002007    0x002008      
+            93 out of 8455 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 APAGADO?   0x000026    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+                 BOTON_IN   0x00002c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+                  DECRE2V   0x000043    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+                  DECRE3V   0x00004f    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+                DETECCION   0x000011    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+                   REBOTE   0x000033    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+                RECARGA3V   0x00004d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+                 RECARGAR   0x00000d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+                     ST1V   0x00003b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+                     ST2V   0x000041    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+                     ST3V   0x00004b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+             _.org_0_001B   0x00001b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+             _.org_0_002A   0x00002a    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+             _.org_0_002D   0x00002d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+             _.org_0_0030   0x000030    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 RECARGAR   0x00000d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+                DETECCION   0x000011    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+             _.org_0_001B   0x00001b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+                 APAGADO?   0x000026    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+             _.org_0_002A   0x00002a    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+                 BOTON_IN   0x00002c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+             _.org_0_002D   0x00002d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+             _.org_0_0030   0x000030    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+                   REBOTE   0x000033    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract2.1\odometro.asm
+                     ST1V   0x00003b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+                     ST2V   0x000041    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+                  DECRE2V   0x000043    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+                     ST3V   0x00004b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+                RECARGA3V   0x00004d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+                  DECRE3V   0x00004f    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM
+
+

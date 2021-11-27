@@ -1,0 +1,71 @@
+MPLINK 4.47, Linker
+Linker Map File - Created Sat Apr 07 21:46:51 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0000d2
+                   .cinit    romdata   0x000069    program   0x000004
+       .config_2007_DIV.O       code   0x002007    program   0x000002
+       .config_2008_DIV.O       code   0x002008    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00006a      
+                            0x002007    0x002008      
+            109 out of 8455 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     CERO   0x000034    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                     FINR   0x000053    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  INDETER   0x000030    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  INICIOD   0x000021    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  INICIOM   0x000056    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  INICIOR   0x000049    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  INICIOS   0x000040    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                     MENU   0x00001a    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                 NEGATIVO   0x000050    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                    RESTA   0x000028    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                RESULTADO   0x000038    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  RESULTM   0x000064    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                    SUMA1   0x00005e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_000D   0x00000d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_0012   0x000012    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_0017   0x000017    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_0047   0x000047    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_0054   0x000054    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_0067   0x000067    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+             _.org_0_000D   0x00000d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_0012   0x000012    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_0017   0x000017    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                     MENU   0x00001a    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  INICIOD   0x000021    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                    RESTA   0x000028    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  INDETER   0x000030    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                     CERO   0x000034    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                RESULTADO   0x000038    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  INICIOS   0x000040    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_0047   0x000047    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  INICIOR   0x000049    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                 NEGATIVO   0x000050    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                     FINR   0x000053    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_0054   0x000054    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  INICIOM   0x000056    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                    SUMA1   0x00005e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+                  RESULTM   0x000064    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+             _.org_0_0067   0x000067    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\pract1\div.asm
+
+

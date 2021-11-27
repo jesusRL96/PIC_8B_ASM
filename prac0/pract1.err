@@ -1,0 +1,3 @@
+Warning[215] C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\PRACT1.ASM 19 : Processor superseded by command line.  Verify processor symbol.
+Message[301] C:\PROGRAM FILES (X86)\MICROCHIP\MPASM SUITE\P16F877.INC 33 : MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+Error[126]   C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\PRACT1.ASM 21 : Argument out of range (not a valid config register address)

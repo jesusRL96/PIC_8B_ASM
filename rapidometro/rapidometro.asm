@@ -1,0 +1,352 @@
+;************************************************************
+;*				INSTITUTO POLITECNICO NACIONAL				*
+;*			Unidad Profesional Interdisciplinara De 		*
+;*			  Ingenieria Y Tecnologías Avanzadas			*
+;*															*
+;*															*
+;*			Programacion De Sistemas En Tiempo Real			*
+;*															*
+;*		Fecha: 15 de abril del 2018							*	
+;*															*
+;*		Ramírez López Jesús Alberto							*
+;*		Zoza Tejeda Nicole Denisse							*
+;*		Becerril Ortega Saul								*
+;*															*
+;*		PROGRAMA:ODOMETRO									*
+;*		PARA: MICROCONTROLADOR PIC16F887					*
+;*		ENSAMBLADO EN: MPLAB For Windows					*
+;************************************************************
+			PROCESSOR 16F887
+			INCLUDE <P16F887.inc>
+			__CONFIG 0X2007,0X2BE2
+			__CONFIG 0X2008,0X3FFF
+			CBLOCK		0X70
+			W_R, ST_R,PC_R
+			ENDC
+
+			ORG 		0X00
+			GOTO		INICIO
+			ORG			0X04
+			INCLUDE		<rescate.asm>
+			GOTO		RSI
+			INCLUDE		<TABLA7SEG.ASM>
+			INCLUDE		<SUBS_TIEMPO.ASM>
+
+INICIO		CLRF		PORTA
+			CLRF		PORTD	
+			BSF			STATUS,RP0	;BANCO1
+			CLRF		TRISB
+			CLRF		TRISC
+			MOVLW		0X87
+			MOVWF		OPTION_REG
+			BSF			STATUS,RP1	;BANCO3
+			CLRF		ANSEL
+			CLRF		ANSELH	
+			BCF			STATUS,RP1
+			BCF			STATUS,RP0	;BANCO0
+;****************************************************************
+			CALL		LCD_INI
+			CALL		TEXTORP
+			CLRF		0X23
+			CLRF		0X24
+			CLRF		0X25
+			CLRF		0X26
+			CLRF		0X27
+			CLRF		0X28
+			CLRF		0X29
+
+			CALL		BOTON_IN
+			MOVLW		.61
+			MOVWF		TMR0
+			BCF			INTCON,T0IF
+			BSF			INTCON,T0IE
+			BSF			INTCON,GIE
+
+RECARGA1	MOVLW		.26			;COMPENSACION
+			MOVWF		0X22
+RECARGA2	MOVLW		.2			;NUMERO DE DETECCIONES QUE EQUIVALEN A 1METRO
+			MOVWF		0X21
+			
+DETECCION	CALL		TIEMPOACT
+			CALL		REBOTE
+			BTFSS		PORTD,.2
+			GOTO		$+6
+			CALL		REBOTE
+			BTFSC		PORTD,.2
+			GOTO		$-1
+			CALL		REBOTE
+			GOTO		RESULTADO
+
+			BTFSS		PORTD,.0
+			GOTO		DETECCION
+			CALL		REBOTE		;DETECCION
+			BTFSC		PORTD,.0
+			GOTO		$-1
+			CALL		REBOTE
+			DECFSZ		0X21,F
+			GOTO		DETECCION
+	
+			INCF		0X23			
+			DECFSZ		0X22,F
+			GOTO		RECARGA2
+			INCF		0X23
+			GOTO		RECARGA1
+
+RESULTADO	BSF			INTCON,T0IF
+			CALL		DIVISION
+			MOVF		0X26,W
+			CALL		BIN_DEC
+			CALL		LCD_INI
+			CALL		TEXTO_VEL	;VELOCIDAD
+			MOVF		0X28,W
+			CALL		A_ASCII
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVF		0X27,W	
+			CALL		A_ASCII
+			MOVWF		PORTB
+			CALL		MANDAR
+			CALL		NEXT
+			MOVLW		'D'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		':'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVF		0X30,W
+			CALL		BIN_DEC
+			MOVF		0X28,W
+			CALL		A_ASCII
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVF		0X27,W	
+			CALL		A_ASCII
+			MOVWF		PORTB
+			CALL		MANDAR
+			
+			MOVLW		' '
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'T'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		':'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVF		0X25,W
+			CALL		BIN_DEC
+			MOVF		0X28,W
+			CALL		A_ASCII
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVF		0X27,W	
+			CALL		A_ASCII
+			MOVWF		PORTB
+			CALL		MANDAR
+			SLEEP
+;****************************************************************
+RSI			INCF		0X24
+			MOVF		0X24,W
+			XORLW		.20
+			BTFSS		STATUS,Z
+			GOTO		$+3
+			INCF		0X25
+			CLRF		0X24
+			MOVLW		.61
+			MOVWF		TMR0
+			BCF			INTCON,T0IF
+			INCLUDE		<resupera.asm>
+;++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+BIN_DEC		MOVWF		0X29
+			CLRF		0X27
+			CLRF		0X28
+			MOVF		0X29,F
+			BTFSC		STATUS,Z
+			RETURN	
+			INCF		0X27
+			MOVF		0X27,W
+			XORLW		.10
+			BTFSS		STATUS,Z
+			GOTO		$+3
+			CLRF		0X27
+			INCF		0X28
+			DECFSZ		0X29
+			GOTO		$-8
+			RETURN
+;
+;BIN_DEC		INCF		0X27
+;			MOVF		0X27,W
+;			XORLW		.10
+;			BTFSS		STATUS,Z
+;			GOTO		$+2
+;			INCF		0X28
+;			DECFSZ		0X26
+;			GOTO		BIN_DEC
+;			RETURN
+TIEMPOACT	CALL		LCD_INI
+			MOVLW		'T'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'I'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'E'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'M'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'P'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'O'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		':'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVF		0X25,W
+			CALL		BIN_DEC
+			MOVF		0X28,W
+			CALL		A_ASCII
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVF		0X27,W	
+			CALL		A_ASCII
+			MOVWF		PORTB
+			CALL		MANDAR
+			RETURN
+
+
+DIVISION:	CLRF		0X26
+			MOVF		0X23,W
+			MOVWF		0X30
+			
+RESTA:		MOVF		0X25,W		;RAM1<RAM2
+			SUBWF		0X23,F
+
+			BTFSS		STATUS,C
+			GOTO		RESULTADOD
+			BTFSC		STATUS,Z
+			GOTO		RESULTADOD
+			INCF		0X26
+			GOTO		RESTA
+
+RESULTADOD:	BTFSC		STATUS,Z
+			INCF		0X26
+			RETURN
+TEXTORP		MOVLW		'R'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'A'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'P'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'I'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'D'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'O'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'M'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'E'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'T'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'R'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'O'
+			MOVWF		PORTB
+			CALL		MANDAR
+			RETURN
+
+
+TEXTO_VEL	MOVLW		'R'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'A'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'P'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'I'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'D'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'E'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'Z'
+			MOVWF		PORTB
+			CALL		MANDAR
+			MOVLW		'='
+			MOVWF		PORTB
+			CALL		MANDAR
+			RETURN
+
+LCD_INI		BCF			PORTC,.0
+			MOVLW		0X01
+			MOVWF		PORTB
+			CALL		EJECUTA
+			MOVLW		0X0C
+			MOVWF		PORTB
+			CALL		EJECUTA
+			MOVLW		0X3C
+			MOVWF		PORTB
+			CALL		EJECUTA
+			BSF			PORTC,.0
+			RETURN
+
+EJECUTA		BSF			PORTC,.1
+			CALL		TIEMPO
+			CALL		TIEMPO
+			BCF			PORTC,.1
+			CALL		TIEMPO
+			RETURN
+
+MANDAR		BSF			PORTC,.0
+			CALL		EJECUTA
+			RETURN
+
+NEXT		BCF			PORTC,.0
+			MOVLW		0XC0
+			MOVWF		PORTB
+			CALL		EJECUTA
+			RETURN
+
+TIEMPO		MOVLW		.10	
+			MOVWF		0X61
+			MOVLW		.10
+			MOVWF		0X62
+			CALL		ST2V
+			RETURN
+
+
+BOTON_IN	BTFSS	PORTD,.2
+			GOTO	$-1
+			CALL	REBOTE
+			BTFSC	PORTD,.2
+			GOTO	$-1
+			CALL	REBOTE
+			RETURN
+
+REBOTE		MOVLW		.44
+			MOVWF		0X61
+			MOVLW		.94
+			MOVWF		0X62
+			CALL		ST2V
+			RETURN
+			END

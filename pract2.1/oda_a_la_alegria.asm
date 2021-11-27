@@ -1,0 +1,339 @@
+;************************************************************
+;*				INSTITUTO POLITECNICO NACIONAL				*
+;*			Unidad Profesional Interdisciplinara De 		*
+;*			  Ingenieria Y Tecnologías Avanzadas			*
+;*															*
+;*															*
+;*			Programacion De Sistemas En Tiempo Real			*
+;*															*
+;*		Fecha: 15 de abril del 2018							*	
+;*															*
+;*		Ramírez López Jesús Alberto							*
+;*		Zoza Tejeda Nicole Denisse							*
+;*		Becerril Ortega Saul								*
+;*															*
+;*		PROGRAMA:ODOMETRO									*
+;*		PARA: MICROCONTROLADOR PIC16F887					*
+;*		ENSAMBLADO EN: MPLAB For Windows					*
+;************************************************************
+			PROCESSOR 16F887
+			INCLUDE <P16F887.inc>
+			__CONFIG 0X2007,0X2BE2
+			__CONFIG 0X2008,0X3FFF
+
+;******************************************************************
+;			CONFIGURACION DE PUERTOS
+;******************************************************************
+			ORG 	0X00
+			CLRF	PORTA
+			CLRF	PORTB
+			CLRF	PORTC		
+			CLRF	PORTD	
+			BSF		STATUS,RP0	;BANCO1
+			CLRF	TRISC			
+			BSF		STATUS,RP1	;BANCO3
+			CLRF	ANSEL
+			CLRF	ANSELH	
+			BCF		STATUS,RP1
+			BCF		STATUS,RP0	;BANCO0
+			;++++++++++++++++++++++++++++++++++
+INICIO:		CALL	BOTON_IN
+
+			CALL	SI1E8		;SI(1/2)
+			CALL	SI1E8
+			CALL	SI1E8
+			CALL	SI1E8
+		BCF		PORTC,.0
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	DO1E8		;DO(1/4)	
+			CALL	DO1E8
+		BCF		PORTC,.0
+			CALL	TIEMPO
+			CALL	RE1E4		;RE(1/4)
+			CALL	RE1E4
+
+		BCF		PORTC,.0
+			CALL	TIEMPO
+			CALL	RE1E4		;RE(1/4)
+			CALL	RE1E4
+
+			CALL	TIEMPO
+			CALL 	TIEMPO
+			CALL	DO1E8		;DO(1/4)	
+			CALL	DO1E8
+
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(1/4)
+			CALL	SI1E8
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/4)
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/4)
+			CALL	SOL1E8
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/4)
+			CALL	SOL1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/4)
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(1/4)
+			CALL	SI1E8
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(3/8)
+			CALL	SI1E8
+			CALL	SI1E8
+
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/8)
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/2)
+			CALL	LA1E8
+			CALL	LA1E8
+			CALL	LA1E8
+			;**+++++++++++*********+++++++
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(3/8)
+			CALL	LA1E8
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/8)
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/2)
+			CALL	SOL1E8
+			CALL	SOL1E8	
+			CALL	SOL1E8
+			CALL	SOL1E8
+
+			;**+++++++++++*********+++++++
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/2)
+			CALL	LA1E8
+			CALL	LA1E8
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(1/4)
+			CALL	SI1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/4)
+			CALL	SOL1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/4)
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(1/8)
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	DO1E8		;DO(1/8)
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(1/4)
+			CALL	SI1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/4)
+			CALL	SOL1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/4)
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(1/8)
+			CALL	TIEMPO
+			CALL	DO1E8		;DO(1/8)
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(1/4)
+			CALL	SI1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/4)
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/4)
+			CALL	SOL1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/4)
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	RE1E4		;RE(1/2)
+			CALL	RE1E4	
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(1/2)
+			CALL	SI1E8
+			CALL	SI1E8
+			CALL	SI1E8
+			CALL	TIEMPO
+			CALL	DO1E8		;DO(1/4)	
+			CALL	DO1E8
+			CALL	TIEMPO			
+			CALL	RE1E4		;RE(1/4)
+			CALL	TIEMPO
+			CALL	RE1E4		;RE(1/4)
+			CALL	TIEMPO			
+			CALL	DO1E8		;DO(1/4)	
+			CALL	DO1E8
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(1/4)
+			CALL	SI1E8
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/4)
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/4)
+			CALL	SOL1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/4)
+			CALL	SOL1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(1/4)
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SI1E8		;SI(1/4)
+			CALL	SI1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	LA1E8		;LA(3/8)
+			CALL	LA1E8
+			CALL	LA1E8
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/8)
+			CALL	TIEMPO
+			CALL	TIEMPO
+			CALL	SOL1E8		;SOL(1/2)
+			CALL	SOL1E8
+			CALL	SOL1E8
+			CALL	SOL1E8
+			GOTO	INICIO
+;****************************************************************
+DO1E8		MOVLW	.128			;1/8 DE DO
+			MOVWF	0X30			
+			BSF		PORTC,.0
+			CALL	DO_4
+			BCF		PORTC,.0
+			CALL	DO_4
+			DECFSZ	0X30,F
+			GOTO	$-5
+			RETURN
+
+RE1E4		MOVLW	.146			;1/4 DE RE
+			MOVWF	0X30			
+			BSF		PORTC,.0
+			CALL	RE_4
+			BCF		PORTC,.0
+			CALL	RE_4
+			DECFSZ	0X30,F
+			GOTO	$-5
+			RETURN
+
+SOL1E8		MOVLW	.196			;1/8 DE SOL
+			MOVWF	0X30			
+			BSF		PORTC,.0
+			CALL	SOL_4
+			BCF		PORTC,.0
+			CALL	SOL_4
+			DECFSZ	0X30,F
+			GOTO	$-5
+			RETURN
+
+LA1E8		MOVLW	.224			;1/8 DE LA
+			MOVWF	0X30			
+			BSF		PORTC,.0
+			CALL	LA_4
+			BCF		PORTC,.0
+			CALL	LA_4
+			DECFSZ	0X30,F
+			GOTO	$-5
+			RETURN
+
+SI1E8		MOVLW	.244			;1/8 DE SI
+			MOVWF	0X30			
+			BSF		PORTC,.0
+			CALL	SOL_4
+			BCF		PORTC,.0
+			CALL	SOL_4
+			DECFSZ	0X30,F
+			GOTO	$-5
+			RETURN
+
+;*****************NOTAS******************************************
+DO_4		MOVLW		.78
+			MOVWF		0X60
+			CALL		ST1V
+			RETURN
+
+RE_4		MOVLW		.70
+			MOVWF		0X60
+			CALL		ST1V
+			RETURN
+
+
+
+
+SOL_4		MOVLW		.51
+			MOVWF		0X60
+			CALL		ST1V
+			NOP
+			NOP
+			NOP
+			RETURN
+
+LA_4		MOVLW		.45
+			MOVWF		0X60
+			CALL		ST1V
+			NOP
+			NOP
+			NOP
+			NOP
+			NOP
+			RETURN
+
+SI_4		MOVLW		.40
+			MOVWF		0X60
+			CALL		ST1V
+			NOP
+			NOP
+			NOP
+			RETURN
+;---------------------------------------
+BOTON_IN	BTFSS	PORTB,.0
+			GOTO	$-1
+			CALL	REBOTE
+			BTFSC	PORTB,.0
+			GOTO	$-1
+			CALL	REBOTE
+			RETURN
+
+REBOTE		MOVLW	.176
+			MOVWF	0X61
+			MOVLW	.23
+			MOVWF	0X62
+			CALL	ST2V
+			RETURN
+
+TIEMPO		MOVLW		.27
+			MOVWF		0X61
+			MOVLW		.61
+			MOVWF		0X62
+			CALL		ST2V
+			RETURN
+			INCLUDE     <C:\Users\Jesus\Documents\tareas\microcontroladores\lib\SUBS_TIEMPO.ASM>
+			END

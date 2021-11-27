@@ -1,0 +1,21 @@
+
+				PROCESSOR   16F887
+                __CONFIG    0X2007,0X2FE4
+				__CONFIG	0X2008,0X3FFF
+                INCLUDE     <P16F887.INC>
+				ORG			0X0000
+				GOTO		.1000
+				ORG			.1000
+				BSF			PCLATH,3
+				GOTO		BONITA
+				ORG			.4000
+BONITA			BCF			PCLATH,3
+				BSF			PCLATH,4
+				GOTO		.6000
+				ORG			.6000
+				BSF			PCLATH,3
+				GOTO		.8000
+				ORG			.8000
+				CLRF		PCLATH
+				GOTO		.0000
+				END	

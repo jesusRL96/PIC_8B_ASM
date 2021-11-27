@@ -1,0 +1,9 @@
+Warning[207] C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\ACTIVIDAD5_2.ASM 23 : Found label after column 1. (VALOR1)
+Warning[207] C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\ACTIVIDAD5_2.ASM 24 : Found label after column 1. (VALOR2)
+Warning[207] C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\ACTIVIDAD5_2.ASM 25 : Found label after column 1. (REGISTRO)
+Warning[207] C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\ACTIVIDAD5_2.ASM 26 : Found label after column 1. (REGISTRO2)
+Message[302] C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\ACTIVIDAD5_2.ASM 37 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\ACTIVIDAD5_2.ASM 38 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\ACTIVIDAD5_2.ASM 39 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\ACTIVIDAD5_2.ASM 41 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\SILVIA\DESKTOP\TAREAS\MICROCONTROLADORES\PRAC1\ACTIVIDAD5_2.ASM 42 : Register in operand not in bank 0.  Ensure that bank bits are correct.

@@ -1,0 +1,85 @@
+MPLINK 4.47, Linker
+Linker Map File - Created Mon May 21 22:31:29 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x0001b0
+.config_2007_TAREA_TECLADO.O       code   0x002007    program   0x000002
+.config_2008_TAREA_TECLADO.O       code   0x002008    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x0000db      
+                            0x002007    0x002008      
+            221 out of 8455 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  DECRE2V   0x000046    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                  DECRE3V   0x000052    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                     FINC   0x0000b0    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                     FINF   0x00009a    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEC1   0x0000a3    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEC2   0x0000a7    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEC3   0x0000ab    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEC4   0x0000af    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEF0   0x00008d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEF1   0x000091    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEF2   0x000095    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEF3   0x000099    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                     HOLA   0x000072    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                   INICIO   0x00005c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                RECARGA3V   0x000050    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                      RSI   0x000087    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                 SIETESEG   0x00000b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\TABLA7SEG.ASM
+                SIETESEGK   0x00001c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\TABLA7SEG.ASM
+                     ST1V   0x00003e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                     ST2V   0x000044    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                     ST3V   0x00004e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                    T1SEG   0x0000cd    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    T25MS   0x0000c7    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                  TECLADO   0x00002d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\TABLA7SEG.ASM
+                   TIEMPO   0x0000d6    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 SIETESEG   0x00000b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\TABLA7SEG.ASM
+                SIETESEGK   0x00001c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\TABLA7SEG.ASM
+                  TECLADO   0x00002d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\TABLA7SEG.ASM
+                     ST1V   0x00003e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                     ST2V   0x000044    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                  DECRE2V   0x000046    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                     ST3V   0x00004e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                RECARGA3V   0x000050    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                  DECRE3V   0x000052    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\SUBS_TIEMPO.ASM
+                   INICIO   0x00005c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                     HOLA   0x000072    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                      RSI   0x000087    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEF0   0x00008d    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEF1   0x000091    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEF2   0x000095    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEF3   0x000099    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                     FINF   0x00009a    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEC1   0x0000a3    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEC2   0x0000a7    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEC3   0x0000ab    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    FUEC4   0x0000af    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                     FINC   0x0000b0    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    T25MS   0x0000c7    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                    T1SEG   0x0000cd    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+                   TIEMPO   0x0000d6    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_teclado\tarea_teclado.asm
+
+

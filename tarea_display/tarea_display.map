@@ -1,0 +1,65 @@
+MPLINK 4.47, Linker
+Linker Map File - Created Sat May 26 15:08:39 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0000e4
+                   .cinit    romdata   0x000072    program   0x000004
+.config_2007_TAREA_DISPLAY.O       code   0x002007    program   0x000002
+.config_2008_TAREA_DISPLAY.O       code   0x002008    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000073      
+                            0x002007    0x002008      
+            118 out of 8455 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  DECRE2V   0x000009    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                  DECRE3V   0x000015    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                  EJECUTA   0x000038    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                   INICIO   0x00001f    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                      LCD   0x000027    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                  LCD_INI   0x00002c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                   MANDAR   0x00003e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                     NEXT   0x000041    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                RECARGA3V   0x000013    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                     ST1V   0x000001    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                     ST2V   0x000007    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                     ST3V   0x000011    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                 TEXTO_F1   0x000046    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                 TEXTO_F2   0x000056    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                   TIEMPO   0x00006c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+             _.org_0_002B   0x00002b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     ST1V   0x000001    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                     ST2V   0x000007    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                  DECRE2V   0x000009    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                     ST3V   0x000011    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                RECARGA3V   0x000013    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                  DECRE3V   0x000015    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\SUBS_TIEMPO.ASM
+                   INICIO   0x00001f    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                      LCD   0x000027    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+             _.org_0_002B   0x00002b    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                  LCD_INI   0x00002c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                  EJECUTA   0x000038    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                   MANDAR   0x00003e    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                     NEXT   0x000041    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                 TEXTO_F1   0x000046    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                 TEXTO_F2   0x000056    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+                   TIEMPO   0x00006c    program     static C:\Users\Jesus\Documents\tareas\microcontroladores\tarea_display\tarea_display.asm
+
+

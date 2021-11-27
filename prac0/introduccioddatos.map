@@ -1,0 +1,38 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Tue Mar 13 20:08:35 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000005    program   0x000012
+.config_2007_INTRODUCCIODDATOS.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000005    0x00000d      
+                            0x002007    0x002007      
+            11 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    CHECA   0x000008    program     static G:\micros\prac1\introduccioddatos.asm
+                   INICIO   0x000005    program     static G:\micros\prac1\introduccioddatos.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   INICIO   0x000005    program     static G:\micros\prac1\introduccioddatos.asm
+                    CHECA   0x000008    program     static G:\micros\prac1\introduccioddatos.asm
+
+

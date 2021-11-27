@@ -1,0 +1,11 @@
+A_ASCII		ADDWF		PCL,F
+			RETLW		'0'
+			RETLW		'1'
+			RETLW		'2'
+			RETLW		'3'
+			RETLW		'4'
+			RETLW		'5'
+			RETLW		'6'
+			RETLW		'7'
+			RETLW		'8'
+			RETLW		'9'

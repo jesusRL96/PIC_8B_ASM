@@ -1,0 +1,1899 @@
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001                         PROCESSOR   16F887
+2007   2BE2           00002                 __CONFIG    0X2007,0X2BE2
+2008   3FFF           00003                         __CONFIG        0X2008,0X3FFF
+                      00004                 INCLUDE     <P16F887.INC>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC16F887 processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00809         LIST
+                      00005                         CBLOCK          0X24
+  00000024            00006                         DIS1,DIS2,DIS3,DIS4,DIS5,DIS6   
+                      00007                         ENDC
+                      00008                         CBLOCK          0X70
+  00000070            00009                         W_R, ST_R,PC_R
+                      00010                         ENDC
+                      00011                         ORG                     0X0000
+0000   2???           00012                 GOTO            INICIO
+                      00013                         ORG                     0X0004
+                      00014                         INCLUDE         <rescate.asm>
+0004   00F0           00001                         MOVWF           W_R
+0005   0E03           00002                         SWAPF           STATUS,W
+0006   00F1           00003                         MOVWF           ST_R
+0007   0183           00004                         CLRF            STATUS
+0008   080A           00005                         MOVF            PCLATH,W
+0009   00F2           00006                         MOVWF           PC_R
+000A   2???           00015                         GOTO            RSI
+                      00016                         INCLUDE         <TABLA7SEG.ASM>
+000B   0782           00001 SIETESEG                ADDWF           PCL,F
+000C   34C0           00002                                 RETLW           0XC0
+000D   34F9           00003                                 RETLW           0XF9
+000E   34A4           00004                                 RETLW           0XA4
+000F   34B0           00005                                 RETLW           0XB0
+0010   3499           00006                                 RETLW           0X99
+0011   3492           00007                                 RETLW           0X92
+0012   3482           00008                                 RETLW           0X82
+0013   34F8           00009                                 RETLW           0XF8
+0014   3480           00010                                 RETLW           0X80
+0015   3498           00011                                 RETLW           0X98
+0016   3488           00012                                 RETLW           0X88
+0017   3483           00013                                 RETLW           0X83
+0018   34C6           00014                                 RETLW           0XC6
+0019   34A1           00015                                 RETLW           0XA1
+001A   3486           00016                                 RETLW           0X86
+001B   348E           00017                                 RETLW           0X8E
+001C   0782           00018 SIETESEGK               ADDWF           PCL,F
+001D   343F           00019                                 RETLW           0X3F
+001E   3406           00020                                 RETLW           0X06
+001F   345B           00021                                 RETLW           0X5B
+0020   344F           00022                                 RETLW           0X4F
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0021   3466           00023                                 RETLW           0X66
+0022   346D           00024                                 RETLW           0X6D
+0023   347D           00025                                 RETLW           0X7D
+0024   3407           00026                                 RETLW           0X07
+0025   347F           00027                                 RETLW           0X7F
+0026   346F           00028                                 RETLW           0X6F
+0027   3477           00029                                 RETLW           0X77
+0028   347C           00030                                 RETLW           0X7C
+0029   3439           00031                                 RETLW           0X39
+002A   345E           00032                                 RETLW           0X5E
+002B   3479           00033                                 RETLW           0X79
+002C   3471           00034                                 RETLW           0X71
+                      00035 
+                      00036 ;++++++++++++++++++++++++++++++++++++++++++++++++
+002D   0782           00037 TABLADO                 ADDWF           PCL,F
+002E   348A           00038                                 RETLW           .138    ;SEGUNDA
+002F   34C5           00039                                 RETLW           .197    ;TERCERA        
+0030   34F2           00040                                 RETLW           .242    ;CUARTA
+0031   34F2           00041                                 RETLW           .242    ;QUINTA
+                      00042 
+0032   0782           00043 TABLADOPS               ADDWF           PCL,F
+0033   3455           00044                                 RETLW           0X55
+0034   3455           00045                                 RETLW           0X55
+0035   3456           00046                                 RETLW           0X56
+0036   3455           00047                                 RETLW           0X55
+                      00048 
+0037   0782           00049 TABLADONOPS             ADDWF           PCL,F
+0038   3410           00050                                 RETLW           .16
+0039   3404           00051                                 RETLW           .4
+003A   341F           00052                                 RETLW           .31
+003B   340D           00053                                 RETLW           .13
+                      00054 ;+++++++++++++++++++++++++++++++++++++++++++++++++
+                      00055 
+                      00056 
+                      00057 ;+++++++++++++++++++++++++++++++++++++++++++++++++
+003C   0782           00058 TABLADO#                ADDWF           PCL,F
+003D   34C8           00059                                 RETLW           .200
+003E   34E5           00060                                 RETLW           .229
+003F   34F3           00061                                 RETLW           .243
+0040   34FA           00062                                 RETLW           .250
+                      00063 
+0041   0782           00064 TABLADOPS#              ADDWF           PCL,F
+0042   3456           00065                                 RETLW           0X56
+0043   3456           00066                                 RETLW           0X56
+0044   3456           00067                                 RETLW           0X56
+0045   3456           00068                                 RETLW           0X56
+                      00069 
+0046   0782           00070 TABLADO#NOPS    ADDWF           PCL,F
+0047   3404           00071                                 RETLW           .4
+0048   342B           00072                                 RETLW           .43
+0049   3426           00073                                 RETLW           .38
+004A   3425           00074                                 RETLW           .37
+                      00075 ;+++++++++++++++++++++++++++++++++++++++++++++++++
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00076 
+004B   0782           00077 TABLARE                 ADDWF           PCL,F
+004C   34CC           00078                                 RETLW           .204
+004D   34E6           00079                                 RETLW           .230
+004E   34F3           00080                                 RETLW           .243
+004F   34FA           00081                                 RETLW           .250
+                      00082 
+0050   0782           00083 TABLAREPS               ADDWF           PCL,F
+0051   3456           00084                                 RETLW           0X56
+0052   3456           00085                                 RETLW           0X56
+0053   3456           00086                                 RETLW           0X56
+0054   3456           00087                                 RETLW           0X56
+                      00088 
+0055   0782           00089 TABLARENOPS             ADDWF           PCL,F
+0056   3428           00090                                 RETLW           .40
+0057   3410           00091                                 RETLW           .16
+0058   3405           00092                                 RETLW           .5
+0059   3414           00093                                 RETLW           .20
+                      00094 ;++++++++++++++++++++++++++++++++++++++++++++++++++
+                      00095 
+005A   0782           00096 TABLARE#                ADDWF           PCL,F
+005B   34CF           00097                                 RETLW           .207
+005C   34E8           00098                                 RETLW           .232
+005D   34F4           00099                                 RETLW           .244
+005E   34FA           00100                                 RETLW           .250
+                      00101 
+005F   0782           00102 TABLAREPS#              ADDWF           PCL,F
+0060   3456           00103                                 RETLW           0X56
+0061   3456           00104                                 RETLW           0X56
+0062   3456           00105                                 RETLW           0X56
+0063   3456           00106                                 RETLW           0X56
+                      00107 
+0064   0782           00108 TABLARE#NOPS    ADDWF           PCL,F
+0065   3428           00109                                 RETLW           .40
+0066   3427           00110                                 RETLW           .39
+0067   3410           00111                                 RETLW           .16
+0068   3404           00112                                 RETLW           .4
+                      00113 ;++++++++++++++++++++++++++++++++++++++++++++++++++
+0069   0782           00114 TABLAMI                 ADDWF           PCL,F
+006A   34D1           00115                                 RETLW           .209
+006B   34E9           00116                                 RETLW           .233
+006C   34F5           00117                                 RETLW           .245
+006D   34FB           00118                                 RETLW           .251
+                      00119 
+006E   0782           00120 TABLAMIPS               ADDWF           PCL,F
+006F   3456           00121                                 RETLW           0X56
+0070   3456           00122                                 RETLW           0X56
+0071   3456           00123                                 RETLW           0X56
+0072   3456           00124                                 RETLW           0X56
+                      00125 
+0073   0782           00126 TABLAMINOPS             ADDWF           PCL,F
+0074   3405           00127                                 RETLW           .5
+0075   3415           00128                                 RETLW           .21
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0076   341C           00129                                 RETLW           .28
+0077   3420           00130                                 RETLW           .32
+                      00131 ;++++++++++++++++++++++++++++++++++++++++++++++++++
+0078   0782           00132 TABLAFA                 ADDWF           PCL,F
+0079   34D4           00133                                 RETLW           .212
+007A   34EA           00134                                 RETLW           .234
+007B   34F6           00135                                 RETLW           .246
+007C   34FB           00136                                 RETLW           .251
+                      00137 
+007D   0782           00138 TABLAFAPS               ADDWF           PCL,F
+007E   3456           00139                                 RETLW           0X56
+007F   3456           00140                                 RETLW           0X56
+0080   3456           00141                                 RETLW           0X56
+0081   3456           00142                                 RETLW           0X56
+                      00143 
+0082   0782           00144 TABLAFANOPS             ADDWF           PCL,F
+0083   340D           00145                                 RETLW           .13
+0084   3409           00146                                 RETLW           .9
+0085   342B           00147                                 RETLW           .43
+0086   3412           00148                                 RETLW           .18
+                      00149 ;+++++++++++++++++++++++++++++++++++++++++++++++++++
+0087   0782           00150 TABLAFA#                ADDWF           PCL,F
+0088   34D7           00151                                 RETLW           .215
+0089   34EC           00152                                 RETLW           .236
+008A   34F6           00153                                 RETLW           .246
+008B   34FE           00154                                 RETLW           .254
+                      00155 
+008C   0782           00156 TABLAFAPS#              ADDWF           PCL,F
+008D   3456           00157                                 RETLW           0X56
+008E   3456           00158                                 RETLW           0X56
+008F   3456           00159                                 RETLW           0X56
+0090   3457           00160                                 RETLW           0X57
+                      00161 
+0091   0782           00162 TABLAFA#NOPS    ADDWF           PCL,F
+0092   3428           00163                                 RETLW           .40
+0093   3427           00164                                 RETLW           .39
+0094   3410           00165                                 RETLW           .16
+0095   342F           00166                                 RETLW           .47
+                      00167 ;+++++++++++++++++++++++++++++++++++++++++++++++++++
+                      00168 
+0096   0782           00169 TABLASOL                ADDWF           PCL,F
+0097   34D9           00170                                 RETLW           .217
+0098   34ED           00171                                 RETLW           .237
+0099   34F7           00172                                 RETLW           .247
+009A   34FC           00173                                 RETLW           .252
+                      00174 
+009B   0782           00175 TABLASOLPS              ADDWF           PCL,F
+009C   3456           00176                                 RETLW           0X56
+009D   3456           00177                                 RETLW           0X56
+009E   3456           00178                                 RETLW           0X56
+009F   3456           00179                                 RETLW           0X56
+                      00180 
+00A0   0782           00181 TABLASOLNOPS    ADDWF           PCL,F
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00A1   3419           00182                                 RETLW           .25
+00A2   341E           00183                                 RETLW           .30
+00A3   3421           00184                                 RETLW           .33
+00A4   3422           00185                                 RETLW           .34
+                      00186 ;+++++++++++++++++++++++++++++++++++++++++++++++++++
+                      00187 
+00A5   0782           00188 TABLASOL#               ADDWF           PCL,F
+00A6   34DB           00189                                 RETLW           .219
+00A7   34EE           00190                                 RETLW           .238
+00A8   34F7           00191                                 RETLW           .247
+00A9   34FC           00192                                 RETLW           .252 ;CAMBIAR
+                      00193 
+00AA   0782           00194 TABLASOLPS#             ADDWF           PCL,F
+00AB   3456           00195                                 RETLW           0X56
+00AC   3456           00196                                 RETLW           0X56
+00AD   3456           00197                                 RETLW           0X56
+00AE   3456           00198                                 RETLW           0X56
+                      00199 
+00AF   0782           00200 TABLASOL#NOPS   ADDWF           PCL,F
+00B0   340F           00201                                 RETLW           .15
+00B1   3419           00202                                 RETLW           .25
+00B2   3409           00203                                 RETLW           .9
+00B3   3416           00204                                 RETLW           .22
+                      00205 ;+++++++++++++++++++++++++++++++++++++++++++++++++++
+                      00206 
+00B4   0782           00207 TABLALA                 ADDWF           PCL,F
+00B5   34DD           00208                                 RETLW           .221
+00B6   34EF           00209                                 RETLW           .239
+00B7   34F8           00210                                 RETLW           .248
+00B8   34FC           00211                                 RETLW           .252
+                      00212 
+00B9   0782           00213 TABLALAPS               ADDWF           PCL,F
+00BA   3456           00214                                 RETLW           0X56
+00BB   3456           00215                                 RETLW           0X56
+00BC   3456           00216                                 RETLW           0X56
+00BD   3456           00217                                 RETLW           0X56
+                      00218 
+00BE   0782           00219 TABLALANOPS             ADDWF           PCL,F
+00BF   340C           00220                                 RETLW           .12
+00C0   3418           00221                                 RETLW           .24
+00C1   341E           00222                                 RETLW           .30
+00C2   340B           00223                                 RETLW           .11
+                      00224 ;+++++++++++++++++++++++++++++++++++++++++++++++++++
+00C3   0782           00225 TABLALA#                ADDWF           PCL,F
+00C4   34DF           00226                                 RETLW           .223
+00C5   34F0           00227                                 RETLW           .240
+00C6   34F8           00228                                 RETLW           .248
+00C7   34FD           00229                                 RETLW           .253
+                      00230 
+00C8   0782           00231 TABLALAPS#              ADDWF           PCL,F
+00C9   3456           00232                                 RETLW           0X56
+00CA   3456           00233                                 RETLW           0X56
+00CB   3456           00234                                 RETLW           0X56
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00CC   3456           00235                                 RETLW           0X56
+                      00236 
+00CD   0782           00237 TABLALA#NOPS    ADDWF           PCL,F
+00CE   340C           00238                                 RETLW           .12
+00CF   3418           00239                                 RETLW           .24
+00D0   3409           00240                                 RETLW           .9
+00D1   342C           00241                                 RETLW           .44
+                      00242 ;+++++++++++++++++++++++++++++++++++++++++++++++++++
+00D2   0782           00243 TABLASI                 ADDWF           PCL,F
+00D3   34E1           00244                                 RETLW           .225
+00D4   34F1           00245                                 RETLW           .241
+00D5   34F9           00246                                 RETLW           .249
+00D6   34FD           00247                                 RETLW           .253
+                      00248 
+00D7   0782           00249 TABLASIPS               ADDWF           PCL,F
+00D8   3456           00250                                 RETLW           0X56
+00D9   3456           00251                                 RETLW           0X56
+00DA   3456           00252                                 RETLW           0X56
+00DB   3456           00253                                 RETLW           0X56
+                      00254 
+00DC   0782           00255 TABLASINOPS             ADDWF           PCL,F
+00DD   3411           00256                                 RETLW           .17
+00DE   341C           00257                                 RETLW           .28
+00DF   341F           00258                                 RETLW           .31 ;Aumentar 1 
+00E0   3422           00259                                 RETLW           .34 ;Reducir 1
+                      00260 
+                      00261 ;********************FIN****************************
+                      00017                         INCLUDE         <SUBS_TIEMPO.ASM>
+00E1   0000           00001 ST1V:                   NOP
+00E2   0000           00002                 NOP
+00E3   0000           00003                 NOP
+00E4   0BE0           00004                 DECFSZ      0X60,F
+00E5   2???           00005                 GOTO        ST1V
+00E6   0008           00006                 RETURN
+                      00007 ;+++++++++++++++++++++++++++++++++++++++
+00E7   0862           00008 ST2V:                   MOVF            0X62,W
+00E8   00E3           00009                                 MOVWF           0X63
+00E9   0000           00010 DECRE2V                 NOP
+00EA   0000           00011                 NOP
+00EB   0000           00012                 NOP
+00EC   0BE3           00013                 DECFSZ      0X63,F
+00ED   2???           00014                 GOTO        DECRE2V
+00EE   0BE1           00015                                 DECFSZ          0X61,F
+00EF   2???           00016                                 GOTO            ST2V
+00F0   0008           00017                 RETURN
+                      00018 ;++++++++++++++++++++++++++++++++++++++++
+00F1   0866           00019 ST3V:                   MOVF            0X66,W
+00F2   00E7           00020                                 MOVWF           0X67
+00F3   0865           00021 RECARGA3V:              MOVF            0X65,W
+00F4   00E8           00022                                 MOVWF           0X68
+00F5   0000           00023 DECRE3V:                NOP
+00F6   0000           00024                 NOP
+00F7   0000           00025                 NOP
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00F8   0BE8           00026                 DECFSZ      0X68,F
+00F9   2???           00027                 GOTO        DECRE3V
+00FA   0BE7           00028                                 DECFSZ          0X67,F
+00FB   2???           00029                                 GOTO            RECARGA3V
+00FC   0BE4           00030                                 DECFSZ          0X64,F
+00FD   2???           00031                                 GOTO            ST3V
+00FE   0008           00032                 RETURN
+                      00033 ;++++++++++++++++++++++++++++++++++++++++++++                
+                      00034             
+                      00018 
+                      00019 ;******************************************************************
+                      00020 ;                       CONFIGURACION DE PUERTOS
+                      00021 ;PORTB.6--->PAUSA       PORTB.7--->CAMBIO
+                      00022 ;******************************************************************
+                      00023 
+00FF   1683           00024 INICIO:         BSF             STATUS,RP0      ;BANCO1
+0100   30F0           00025                         MOVLW   0XF0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0101   0087           00026                         MOVWF   TRISC
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0102   0185           00027                         CLRF    TRISA
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0103   0188           00028                         CLRF    TRISD
+0104   30F0           00029                         MOVLW   0XF0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0105   0086           00030                         MOVWF   TRISB
+0106   30FF           00031                         MOVLW   0XFF            
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0107   0096           00032                         MOVWF   IOCB            ;TODOS LOS PINES INT_ON_CHANGE  
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0108   1381           00033                         BCF             OPTION_REG,.7
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0109   1281           00034                         BCF             OPTION_REG,.5
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+010A   1201           00035                         BCF             OPTION_REG,.4
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+010B   1181           00036                         BCF             OPTION_REG,.3
+010C   1703           00037                         BSF             STATUS,RP1      ;BANCO3
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+010D   0188           00038                         CLRF    ANSEL
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+010E   0189           00039                         CLRF    ANSELH  
+010F   1303           00040                         BCF             STATUS,RP1
+0110   1283           00041                         BCF             STATUS,RP0      ;BANCO0
+0111   0806           00042                         MOVF    PORTB,W
+0112   100B           00043                         BCF             INTCON,RBIF     
+0113   110B           00044                         BCF             INTCON,T0IF     
+0114   158B           00045                         BSF             INTCON,RBIE
+0115   178B           00046                         BSF             INTCON,GIE      ;PORTB ES FUENTE DE INT_ON_CHANGE               
+                      00047 
+                      00048 ;*****************************************************************
+0116   0187           00049                         CLRF    PORTC
+0117   30FF           00050                         MOVLW   0XFF
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0118   0085           00051                         MOVWF   PORTA
+0119   01A4           00052                         CLRF    DIS1
+011A   01A5           00053                         CLRF    DIS2
+011B   01A6           00054                         CLRF    DIS3                                                   
+011C   01A7           00055                         CLRF    DIS4
+011D   01A8           00056                         CLRF    DIS5
+011E   01A9           00057                         CLRF    DIS6
+                      00058 
+011F   2???           00059                         CALL    ASC_DES                 
+0120   1C30           00060                         BTFSS   0X30,.0
+0121   2???           00061                         GOTO    ASCENDENTE
+0122   3009           00062                         MOVLW   .9
+0123   00A4           00063                         MOVWF   DIS1
+0124   00A5           00064                         MOVWF   DIS2
+0125   00A6           00065                         MOVWF   DIS3
+0126   00A7           00066                         MOVWF   DIS4
+0127   00A8           00067                         MOVWF   DIS5
+0128   00A9           00068                         MOVWF   DIS6
+0129   2???           00069                         GOTO    DESCENDENTE
+                      00070 
+012A   01A9           00071 LIMP_6          CLRF    DIS6    
+012B   01A8           00072 LIMP_5          CLRF    DIS5
+012C   01A7           00073 LIMP_4          CLRF    DIS4
+012D   01A6           00074 LIMP_3          CLRF    DIS3
+012E   01A5           00075 LIMP_2          CLRF    DIS2
+012F   01A4           00076 LIMP_1          CLRF    DIS1
+                      00077 
+0130   01B1           00078 ASCENDENTE      CLRF    0X31
+0131   2???           00079                         CALL    MOSTRAR
+0132   0000           00080                         NOP
+0133   0000           00081                         NOP
+0134   0000           00082                         NOP
+0135   0000           00083                         NOP
+0136   2???           00084                         CALL    BOTONES ;PREGUNTAR POR RB7 Y RB6
+0137   1BB1           00085                         BTFSC   0X31,.7
+0138   2???           00086                         GOTO    DESCENDENTE
+0139   1B31           00087                         BTFSC   0X31,.6
+013A   2???           00088                         CALL    PAUSA
+                      00089 
+013B   0AA4           00090                         INCF    DIS1,F          ;INCREMENTOS
+013C   300A           00091                         MOVLW   .10
+013D   0624           00092                         XORWF   DIS1,W
+013E   1D03           00093                         BTFSS   STATUS,Z
+013F   2???           00094                         GOTO    ASCENDENTE
+0140   0000           00095                         NOP     
+0141   0AA5           00096                         INCF    DIS2,F
+0142   300A           00097                         MOVLW   .10
+0143   0625           00098                         XORWF   DIS2,W
+0144   1D03           00099                         BTFSS   STATUS,Z
+0145   2???           00100                         GOTO    LIMP_1
+0146   0000           00101                         NOP
+0147   0000           00102                         NOP
+0148   0AA6           00103                         INCF    DIS3,F  ;26
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0149   300A           00104                         MOVLW   .10
+014A   0626           00105                         XORWF   DIS3,W
+014B   1D03           00106                         BTFSS   STATUS,Z  
+014C   2???           00107                         GOTO    LIMP_2
+                      00108                                         
+014D   0AA7           00109                         INCF    DIS4,F
+014E   300A           00110                         MOVLW   .10
+014F   0627           00111                         XORWF   DIS4,W
+0150   1D03           00112                         BTFSS   STATUS,Z
+0151   2???           00113                         GOTO    LIMP_3
+0152   0000           00114                         NOP
+0153   0AA8           00115                         INCF    DIS5,F
+0154   300A           00116                         MOVLW   .10
+0155   0628           00117                         XORWF   DIS5,W
+0156   1D03           00118                         BTFSS   STATUS,Z
+0157   2???           00119                         GOTO    LIMP_4
+0158   0000           00120                         NOP 
+0159   0000           00121                         NOP
+015A   0000           00122                         NOP                                             
+015B   0AA9           00123                         INCF    DIS6,F
+015C   300A           00124                         MOVLW   .10
+015D   0629           00125                         XORWF   DIS6,W
+015E   1D03           00126                         BTFSS   STATUS,Z
+015F   2???           00127                         GOTO    LIMP_5
+0160   2???           00128                         GOTO    LIMP_6  ;46
+                      00129 
+0161   3009           00130 NUEVE_6         MOVLW   .9
+0162   00A9           00131                         MOVWF   DIS6    
+0163   3009           00132 NUEVE_5         MOVLW   .9
+0164   00A8           00133                         MOVWF   DIS5
+0165   3009           00134 NUEVE_4         MOVLW   .9
+0166   00A7           00135                         MOVWF   DIS4
+0167   3009           00136 NUEVE_3         MOVLW   .9
+0168   00A6           00137                         MOVWF   DIS3
+0169   3009           00138 NUEVE_2         MOVLW   .9
+016A   00A5           00139                         MOVWF   DIS2
+016B   3009           00140 NUEVE_1         MOVLW   .9
+016C   00A4           00141                         MOVWF   DIS1
+                      00142 
+016D   01B1           00143 DESCENDENTE     CLRF    0X31
+016E   2???           00144                         CALL    MOSTRAR
+                      00145 
+016F   2???           00146                         CALL    BOTONES ;PREGUNTAR POR RB7 Y RB6
+0170   1BB1           00147                         BTFSC   0X31,.7
+0171   2???           00148                         GOTO    ASCENDENTE
+0172   1B31           00149                         BTFSC   0X31,.6
+0173   2???           00150                         CALL    PAUSA
+                      00151                         
+0174   03A4           00152                         DECF    DIS1,F          ;DECREMENTOS
+0175   30FF           00153                         MOVLW   .255
+0176   0624           00154                         XORWF   DIS1,W
+0177   1D03           00155                         BTFSS   STATUS,Z
+0178   2???           00156                         GOTO    DESCENDENTE
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 10
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0179   03A5           00157                         DECF    DIS2,F
+017A   30FF           00158                         MOVLW   .255
+017B   0625           00159                         XORWF   DIS2,W
+017C   1D03           00160                         BTFSS   STATUS,Z
+017D   2???           00161                         GOTO    NUEVE_1
+017E   03A6           00162                         DECF    DIS3,F
+017F   30FF           00163                         MOVLW   .255
+0180   0626           00164                         XORWF   DIS3,W
+0181   1D03           00165                         BTFSS   STATUS,Z
+0182   2???           00166                         GOTO    NUEVE_2
+0183   03A7           00167                         DECF    DIS4,F
+0184   30FF           00168                         MOVLW   .255
+0185   0627           00169                         XORWF   DIS4,W
+0186   1D03           00170                         BTFSS   STATUS,Z
+0187   2???           00171                         GOTO    NUEVE_3
+0188   03A8           00172                         DECF    DIS5,F
+0189   30FF           00173                         MOVLW   .255
+018A   0628           00174                         XORWF   DIS5,W
+018B   1D03           00175                         BTFSS   STATUS,Z
+018C   2???           00176                         GOTO    NUEVE_4
+018D   03A9           00177                         DECF    DIS6,F
+018E   30FF           00178                         MOVLW   .255
+018F   0629           00179                         XORWF   DIS6,W
+0190   1D03           00180                         BTFSS   STATUS,Z
+0191   2???           00181                         GOTO    NUEVE_5
+0192   2???           00182                         GOTO    NUEVE_6
+                      00183 
+                      00184 
+0193   2???           00185 PAUSA           CALL    MOSTRAR
+0194   1F07           00186                         BTFSS   PORTC,.6
+0195   2???           00187                         GOTO    PAUSA
+0196   2???           00188                         CALL    REBOTE
+0197   1B07           00189                         BTFSC   PORTC,.6
+0198   2???           00190                         GOTO    $-1
+0199   2???           00191                         CALL    REBOTE
+019A   01B1           00192                         CLRF    0X31
+019B   0008           00193                         RETURN
+                      00194                         
+                      00195 ;+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+019C   0824           00196 MOSTRAR         MOVF    DIS1,W
+019D   2???           00197                         CALL    SIETESEGK
+019E   0088           00198                         MOVWF   PORTD
+019F   1005           00199                         BCF             PORTA,.0                                        
+01A0   2???           00200                         CALL    _20E6
+01A1   1405           00201                         BSF             PORTA,.0
+01A2   0825           00202                         MOVF    DIS2,W
+01A3   2???           00203                         CALL    SIETESEGK
+01A4   0088           00204                         MOVWF   PORTD
+01A5   1085           00205                         BCF             PORTA,.1
+01A6   2???           00206                         CALL    _20E6
+01A7   1485           00207                         BSF             PORTA,.1
+01A8   0826           00208                         MOVF    DIS3,W
+01A9   2???           00209                         CALL    SIETESEGK
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 11
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+01AA   0088           00210                         MOVWF   PORTD
+01AB   1105           00211                         BCF             PORTA,.2                                
+01AC   2???           00212                         CALL    _20E6
+01AD   1505           00213                         BSF             PORTA,.2
+01AE   0827           00214                         MOVF    DIS4,W
+01AF   2???           00215                         CALL    SIETESEGK
+01B0   0088           00216                         MOVWF   PORTD
+01B1   1185           00217                         BCF             PORTA,.3
+01B2   2???           00218                         CALL    _20E6
+01B3   1585           00219                         BSF             PORTA,.3
+01B4   0828           00220                         MOVF    DIS5,W
+01B5   2???           00221                         CALL    SIETESEGK
+01B6   0088           00222                         MOVWF   PORTD
+01B7   1205           00223                         BCF             PORTA,.4                                
+01B8   2???           00224                         CALL    _20E6
+01B9   1605           00225                         BSF             PORTA,.4
+01BA   0829           00226                         MOVF    DIS6,W
+01BB   2???           00227                         CALL    SIETESEGK
+01BC   0088           00228                         MOVWF   PORTD
+01BD   1285           00229                         BCF             PORTA,.5
+01BE   2???           00230                         CALL    _20E6
+01BF   1685           00231                         BSF             PORTA,.5
+01C0   0008           00232                         RETURN
+                      00233                         
+01C1   3000           00234 ASC_DES         MOVLW   0X00            ;ASCENDENTE
+01C2   1B87           00235                         BTFSC   PORTC,.7
+01C3   3001           00236                         MOVLW   0X01            ;DESCENDENTE
+01C4   00B0           00237                         MOVWF   0X30            ;REGISTRO INDICADOR
+01C5   2???           00238                         CALL    REBOTE
+01C6   1B87           00239                         BTFSC   PORTC,.7
+01C7   2???           00240                         GOTO    $-1
+01C8   2???           00241                         CALL    REBOTE
+01C9   0008           00242                         RETURN
+                      00243 
+01CA   0807           00244 BOTONES         MOVF    PORTC,W
+01CB   39C0           00245                         ANDLW   0XC0
+01CC   1903           00246                         BTFSC   STATUS,Z
+01CD   0008           00247                         RETURN
+01CE   2???           00248                         CALL    REBOTE
+01CF   1B07           00249                         BTFSC   PORTC,.6
+01D0   1731           00250                         BSF             0X31,.6
+01D1   1B87           00251                         BTFSC   PORTC,.7
+01D2   17B1           00252                         BSF             0X31,.7
+01D3   0807           00253                         MOVF    PORTC,W
+01D4   39C0           00254                         ANDLW   0XC0
+01D5   1D03           00255                         BTFSS   STATUS,Z
+01D6   2???           00256                         GOTO    $-3
+01D7   2???           00257                         CALL    REBOTE  
+01D8   0008           00258                         RETURN  
+                      00259 
+01D9   308E           00260 REBOTE:         MOVLW           .142
+01DA   00E1           00261                         MOVWF           0X61
+01DB   303A           00262                         MOVLW           .58
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 12
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+01DC   00E2           00263                         MOVWF           0X62
+01DD   2???           00264                         CALL            ST2V
+01DE   0008           00265                         RETURN
+                      00266 
+01DF   3066           00267 _20E6           MOVLW   .102            ;1648-1653              (1650)
+01E0   00E1           00268                         MOVWF   0X61
+01E1   3002           00269                         MOVLW   .2
+01E2   00E2           00270                         MOVWF   0X62
+01E3   2???           00271                         CALL    ST2V
+01E4   0000           00272                         NOP
+01E5   0000           00273                         NOP
+01E6   0000           00274                         NOP
+01E7   0000           00275                         NOP
+01E8   0008           00276                         RETURN
+                      00277 ;++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                      00278 
+01E9   2???           00279 RSI                             CALL            REBOTE
+01EA   01C0           00280                                 CLRF            0X40
+01EB   0806           00281                                 MOVF            PORTB,W
+                      00282 
+01EC   1A06           00283 FUEF0                   BTFSC           PORTB,4 ;FILAS  
+01ED   2???           00284                                 GOTO            FUEF1
+01EE   300C           00285                                 MOVLW           .12
+01EF   2???           00286                                 GOTO            FINF                    
+                      00287 
+01F0   1A86           00288 FUEF1                   BTFSC           PORTB,5 
+01F1   2???           00289                                 GOTO            FUEF2
+01F2   3008           00290                                 MOVLW           .8
+01F3   2???           00291                                 GOTO            FINF                            
+                      00292 
+01F4   1B06           00293 FUEF2                   BTFSC           PORTB,6
+01F5   2???           00294                                 GOTO            FUEF3
+01F6   3004           00295                                 MOVLW           .4
+01F7   2???           00296                                 GOTO            FINF                    
+                      00297 
+01F8   3000           00298 FUEF3                   MOVLW           .0
+                      00299 
+01F9   00C0           00300 FINF                    MOVWF           0X40                    
+01FA   0186           00301                                 CLRF            PORTB
+01FB   1683           00302                                 BSF                     STATUS,RP0      ;B1     
+01FC   300F           00303                                 MOVLW           0X0F
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+01FD   0086           00304                                 MOVWF           TRISB
+01FE   30FF           00305                                 MOVLW           0XFF
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+01FF   0095           00306                                 MOVWF           WPUB
+0200   1283           00307                                 BCF                     STATUS,RP0      ;B0
+0201   0186           00308                                 CLRF            PORTB                           
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0202   1381           00309                                 BCF                     OPTION_REG,.7
+                      00310 
+0203   1886           00311 FUEC1                   BTFSC           PORTB,1 ;COLUMNAS
+0204   2???           00312                                 GOTO            FUEC2
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 13
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0205   3002           00313                                 MOVLW           .2
+0206   2???           00314                                 GOTO            FINC                    
+                      00315 
+0207   1906           00316 FUEC2                   BTFSC           PORTB,2 
+0208   2???           00317                                 GOTO            FUEC3
+0209   3001           00318                                 MOVLW           .1
+020A   2???           00319                                 GOTO            FINC                    
+                      00320 
+020B   1986           00321 FUEC3                   BTFSC           PORTB,3 
+020C   2???           00322                                 GOTO            FUEC4
+020D   3000           00323                                 MOVLW           .0
+020E   2???           00324                                 GOTO            FINC                    
+                      00325 
+020F   3003           00326 FUEC4                   MOVLW           .3
+                      00327 
+                      00328 
+0210   07C0           00329 FINC                    ADDWF           0X40,F
+0211   0840           00330                                 MOVF            0X40,W
+0212   3A00           00331                                 XORLW           .0
+0213   1903           00332                                 BTFSC           STATUS,Z
+0214   2???           00333                                 GOTO            DO
+0215   0840           00334                                 MOVF            0X40,W
+0216   3A01           00335                                 XORLW           .1
+0217   1903           00336                                 BTFSC           STATUS,Z
+0218   2???           00337                                 GOTO            DO#
+0219   0840           00338                                 MOVF            0X40,W
+021A   3A02           00339                                 XORLW           .2
+021B   1903           00340                                 BTFSC           STATUS,Z
+021C   2???           00341                                 GOTO            RE
+021D   0840           00342                                 MOVF            0X40,W
+021E   3A03           00343                                 XORLW           .3
+021F   1903           00344                                 BTFSC           STATUS,Z
+0220   2???           00345                                 GOTO            RE#
+0221   0840           00346                                 MOVF            0X40,W
+0222   3A04           00347                                 XORLW           .4
+0223   1903           00348                                 BTFSC           STATUS,Z
+0224   2???           00349                                 GOTO            MI
+0225   0840           00350                                 MOVF            0X40,W
+0226   3A05           00351                                 XORLW           .5
+0227   1903           00352                                 BTFSC           STATUS,Z
+0228   2???           00353                                 GOTO            FA
+0229   0840           00354                                 MOVF            0X40,W  
+022A   3A06           00355                                 XORLW           .6
+022B   1903           00356                                 BTFSC           STATUS,Z
+022C   2???           00357                                 GOTO            FA#
+022D   0840           00358                                 MOVF            0X40,W
+022E   3A07           00359                                 XORLW           .7
+022F   1903           00360                                 BTFSC           STATUS,Z
+0230   2???           00361                                 GOTO            SOL
+0231   0840           00362                                 MOVF            0X40,W
+0232   3A08           00363                                 XORLW           .8
+0233   1903           00364                                 BTFSC           STATUS,Z
+0234   2???           00365                                 GOTO            SOL#
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 14
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0235   0840           00366                                 MOVF            0X40,W
+0236   3A09           00367                                 XORLW           .9
+0237   1903           00368                                 BTFSC           STATUS,Z
+0238   2???           00369                                 GOTO            LA
+0239   0840           00370                                 MOVF            0X40,W
+023A   3A0A           00371                                 XORLW           .10
+023B   1903           00372                                 BTFSC           STATUS,Z
+023C   2???           00373                                 GOTO            LA#
+023D   0840           00374                                 MOVF            0X40,W
+023E   3A0B           00375                                 XORLW           .11
+023F   1903           00376                                 BTFSC           STATUS,Z
+0240   2???           00377                                 GOTO            SI
+0241   0840           00378                                 MOVF            0X40,W
+0242   3A0C           00379                                 XORLW           .12
+0243   1903           00380                                 BTFSC           STATUS,Z
+0244   2???           00381                                 GOTO            OCTAVA2
+0245   0840           00382                                 MOVF            0X40,W
+0246   3A0D           00383                                 XORLW           .13
+0247   1903           00384                                 BTFSC           STATUS,Z
+0248   2???           00385                                 GOTO            OCTAVA3
+0249   0840           00386                                 MOVF            0X40,W
+024A   3A0E           00387                                 XORLW           .14
+024B   1903           00388                                 BTFSC           STATUS,Z
+024C   2???           00389                                 GOTO            OCTAVA4
+024D   2???           00390                                 GOTO            OCTAVA5
+                      00391 
+                      00392 ;************************INICIONOTAS***********************                     
+024E   2???           00393 DO                              CALL            OCTAVA?
+024F   2???           00394                                 CALL            TABLADO
+0250   00C2           00395                                 MOVWF           0X42
+0251   0844           00396                                 MOVF            0X44,W
+0252   2???           00397                                 CALL            TABLADONOPS
+0253   00C5           00398                                 MOVWF           0X45    
+0254   0844           00399                                 MOVF            0X44,W
+0255   2???           00400                                 CALL            TABLADOPS                               
+0256   1683           00401                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0257   0081           00402                                 MOVWF           OPTION_REG
+0258   1283           00403                                 BCF                     STATUS,RP0
+0259   3039           00404                                 MOVLW           0X39    ;C
+025A   00A3           00405                                 MOVWF           0X23
+025B   3000           00406                                 MOVLW           0x00    ;NO SOSTENIDO
+025C   00B2           00407                                 MOVWF           0X32
+025D   2???           00408                                 CALL            NOTA
+025E   2???           00409                                 GOTO            FIN
+                      00410 ;***********************************************************
+025F   2???           00411 DO#                             CALL            OCTAVA?
+0260   2???           00412                                 CALL            TABLADO#
+0261   00C2           00413                                 MOVWF           0X42
+0262   0844           00414                                 MOVF            0X44,W
+0263   2???           00415                                 CALL            TABLADO#NOPS
+0264   00C5           00416                                 MOVWF           0X45    
+0265   0844           00417                                 MOVF            0X44,W
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 15
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0266   2???           00418                                 CALL            TABLADOPS#
+0267   1683           00419                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0268   0081           00420                                 MOVWF           OPTION_REG
+0269   1283           00421                                 BCF                     STATUS,RP0      
+026A   3039           00422                                 MOVLW           0X39    ;C
+026B   00A3           00423                                 MOVWF           0X23
+026C   306D           00424                                 MOVLW           0X6D    ;SOSTENIDO 
+026D   00B2           00425                                 MOVWF           0X32
+026E   2???           00426                                 CALL            NOTA
+026F   2???           00427                                 GOTO            FIN
+                      00428 ;***********************************************************
+0270   2???           00429 RE                              CALL            OCTAVA?
+0271   2???           00430                                 CALL            TABLARE
+0272   00C2           00431                                 MOVWF           0X42
+0273   0844           00432                                 MOVF            0X44,W
+0274   2???           00433                                 CALL            TABLARENOPS
+0275   00C5           00434                                 MOVWF           0X45    
+0276   0844           00435                                 MOVF            0X44,W
+0277   2???           00436                                 CALL            TABLAREPS
+0278   1683           00437                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0279   0081           00438                                 MOVWF           OPTION_REG
+027A   1283           00439                                 BCF                     STATUS,RP0
+027B   305E           00440                                 MOVLW           0X5E    ;D
+027C   00A3           00441                                 MOVWF           0X23
+027D   3000           00442                                 MOVLW           0X00    ;NO SOSTENIDO
+027E   00B2           00443                                 MOVWF           0X32
+027F   2???           00444                                 CALL            NOTA
+0280   2???           00445                                 GOTO            FIN
+                      00446 ;***********************************************************
+0281   2???           00447 RE#                             CALL            OCTAVA?
+0282   2???           00448                                 CALL            TABLARE#
+0283   00C2           00449                                 MOVWF           0X42
+0284   0844           00450                                 MOVF            0X44,W
+0285   2???           00451                                 CALL            TABLARE#NOPS
+0286   00C5           00452                                 MOVWF           0X45    
+0287   0844           00453                                 MOVF            0X44,W
+0288   2???           00454                                 CALL            TABLAREPS#
+0289   1683           00455                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+028A   0081           00456                                 MOVWF           OPTION_REG
+028B   1283           00457                                 BCF                     STATUS,RP0      
+028C   305E           00458                                 MOVLW           0X5E    ;D
+028D   00A3           00459                                 MOVWF           0X23
+028E   306D           00460                                 MOVLW           0X6D    ;SOSTENIDO
+028F   00B2           00461                                 MOVWF           0X32
+0290   2???           00462                                 CALL            NOTA
+0291   2???           00463                                 GOTO            FIN
+                      00464 ;***********************************************************
+0292   2???           00465 MI                              CALL            OCTAVA?
+0293   2???           00466                                 CALL            TABLAMI
+0294   00C2           00467                                 MOVWF           0X42
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 16
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0295   0844           00468                                 MOVF            0X44,W
+0296   2???           00469                                 CALL            TABLAMINOPS
+0297   00C5           00470                                 MOVWF           0X45    
+0298   0844           00471                                 MOVF            0X44,W
+0299   2???           00472                                 CALL            TABLAMIPS
+029A   1683           00473                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+029B   0081           00474                                 MOVWF           OPTION_REG
+029C   1283           00475                                 BCF                     STATUS,RP0                              
+029D   3079           00476                                 MOVLW           0X79    ;E
+029E   00A3           00477                                 MOVWF           0X23
+029F   3000           00478                                 MOVLW           0X00    ;NO SOSTENIDO
+02A0   00B2           00479                                 MOVWF           0X32
+02A1   2???           00480                                 CALL            NOTA
+02A2   2???           00481                                 GOTO            FIN
+                      00482 ;***********************************************************
+02A3   2???           00483 FA                              CALL            OCTAVA?
+02A4   2???           00484                                 CALL            TABLAFA
+02A5   00C2           00485                                 MOVWF           0X42
+02A6   0844           00486                                 MOVF            0X44,W
+02A7   2???           00487                                 CALL            TABLAFANOPS
+02A8   00C5           00488                                 MOVWF           0X45    
+02A9   0844           00489                                 MOVF            0X44,W
+02AA   2???           00490                                 CALL            TABLAFAPS
+02AB   1683           00491                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+02AC   0081           00492                                 MOVWF           OPTION_REG
+02AD   1283           00493                                 BCF                     STATUS,RP0
+02AE   3071           00494                                 MOVLW           0X71    ;F
+02AF   00A3           00495                                 MOVWF           0X23
+02B0   3000           00496                                 MOVLW           B'00000000'     ;NO SOSTENIDO
+02B1   00B2           00497                                 MOVWF           0X32
+02B2   2???           00498                                 CALL            NOTA
+02B3   2???           00499                                 GOTO            FIN
+                      00500 ;***********************************************************
+02B4   2???           00501 FA#                             CALL            OCTAVA?
+02B5   2???           00502                                 CALL            TABLAFA#
+02B6   00C2           00503                                 MOVWF           0X42
+02B7   0844           00504                                 MOVF            0X44,W
+02B8   2???           00505                                 CALL            TABLAFA#NOPS
+02B9   00C5           00506                                 MOVWF           0X45    
+02BA   0844           00507                                 MOVF            0X44,W
+02BB   2???           00508                                 CALL            TABLAFAPS#
+02BC   1683           00509                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+02BD   0081           00510                                 MOVWF           OPTION_REG
+02BE   1283           00511                                 BCF                     STATUS,RP0
+02BF   3071           00512                                 MOVLW           0X71    ;F
+02C0   00A3           00513                                 MOVWF           0X23
+02C1   306D           00514                                 MOVLW           0X6D    ;SOSTENIDO
+02C2   00B2           00515                                 MOVWF           0X32
+02C3   2???           00516                                 CALL            NOTA
+02C4   2???           00517                                 GOTO            FIN
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 17
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00518 ;***********************************************************
+02C5   2???           00519 SOL                             CALL            OCTAVA?
+02C6   2???           00520                                 CALL            TABLASOL
+02C7   00C2           00521                                 MOVWF           0X42
+02C8   0844           00522                                 MOVF            0X44,W
+02C9   2???           00523                                 CALL            TABLASOLNOPS
+02CA   00C5           00524                                 MOVWF           0X45    
+02CB   0844           00525                                 MOVF            0X44,W
+02CC   2???           00526                                 CALL            TABLASOLPS
+02CD   1683           00527                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+02CE   0081           00528                                 MOVWF           OPTION_REG
+02CF   1283           00529                                 BCF                     STATUS,RP0              
+02D0   307D           00530                                 MOVLW           0X7D    ;G
+02D1   00A3           00531                                 MOVWF           0X23
+02D2   3000           00532                                 MOVLW           0X00    ;NO SOSTENIDO
+02D3   00B2           00533                                 MOVWF           0X32
+02D4   2???           00534                                 CALL            NOTA
+02D5   2???           00535                                 GOTO            FIN
+                      00536 ;***********************************************************
+02D6   2???           00537 SOL#                    CALL            OCTAVA?
+02D7   2???           00538                                 CALL            TABLASOL#
+02D8   00C2           00539                                 MOVWF           0X42
+02D9   0844           00540                                 MOVF            0X44,W
+02DA   2???           00541                                 CALL            TABLASOL#NOPS
+02DB   00C5           00542                                 MOVWF           0X45    
+02DC   0844           00543                                 MOVF            0X44,W
+02DD   2???           00544                                 CALL            TABLASOLPS#
+02DE   1683           00545                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+02DF   0081           00546                                 MOVWF           OPTION_REG
+02E0   1283           00547                                 BCF                     STATUS,RP0      
+02E1   307D           00548                                 MOVLW           0X7D    ;G
+02E2   00A3           00549                                 MOVWF           0X23
+02E3   306D           00550                                 MOVLW           0X6D    ; SOSTENIDO
+02E4   00B2           00551                                 MOVWF           0X32
+02E5   2???           00552                                 CALL            NOTA
+02E6   2???           00553                                 GOTO            FIN
+                      00554 ;***********************************************************
+02E7   2???           00555 LA                              CALL            OCTAVA?
+02E8   2???           00556                                 CALL            TABLALA
+02E9   00C2           00557                                 MOVWF           0X42
+02EA   0844           00558                                 MOVF            0X44,W
+02EB   2???           00559                                 CALL            TABLALANOPS
+02EC   00C5           00560                                 MOVWF           0X45    
+02ED   0844           00561                                 MOVF            0X44,W
+02EE   2???           00562                                 CALL            TABLALAPS
+02EF   1683           00563                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+02F0   0081           00564                                 MOVWF           OPTION_REG
+02F1   1283           00565                                 BCF                     STATUS,RP0
+02F2   3077           00566                                 MOVLW           0X77    ;A
+02F3   00A3           00567                                 MOVWF           0X23
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 18
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+02F4   3000           00568                                 MOVLW           0X00    ;NO SOSTENIDO
+02F5   00B2           00569                                 MOVWF           0X32
+02F6   2???           00570                                 CALL            NOTA
+02F7   2???           00571                                 GOTO            FIN
+                      00572 ;***********************************************************
+02F8   2???           00573 LA#                             CALL            OCTAVA?
+02F9   2???           00574                                 CALL            TABLALA#
+02FA   00C2           00575                                 MOVWF           0X42
+02FB   0844           00576                                 MOVF            0X44,W
+02FC   2???           00577                                 CALL            TABLALA#NOPS
+02FD   00C5           00578                                 MOVWF           0X45    
+02FE   0844           00579                                 MOVF            0X44,W
+02FF   2???           00580                                 CALL            TABLALAPS#
+0300   1683           00581                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0301   0081           00582                                 MOVWF           OPTION_REG
+0302   1283           00583                                 BCF                     STATUS,RP0
+0303   3077           00584                                 MOVLW           0X77    ;A
+0304   00A3           00585                                 MOVWF           0X23
+0305   306D           00586                                 MOVLW           0X6D    ; SOSTENIDO
+0306   00B2           00587                                 MOVWF           0X32
+0307   2???           00588                                 CALL            NOTA
+0308   2???           00589                                 GOTO            FIN
+                      00590 ;***********************************************************
+0309   2???           00591 SI                              CALL            OCTAVA?
+030A   2???           00592                                 CALL            TABLASI
+030B   00C2           00593                                 MOVWF           0X42
+030C   0844           00594                                 MOVF            0X44,W
+030D   2???           00595                                 CALL            TABLASINOPS
+030E   00C5           00596                                 MOVWF           0X45    
+030F   0844           00597                                 MOVF            0X44,W
+0310   2???           00598                                 CALL            TABLASIPS
+0311   1683           00599                                 BSF                     STATUS,RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0312   0081           00600                                 MOVWF           OPTION_REG
+0313   1283           00601                                 BCF                     STATUS,RP0      
+0314   307C           00602                                 MOVLW           0X7C    ;B
+0315   00A3           00603                                 MOVWF           0X23
+0316   3000           00604                                 MOVLW           0X00    ;NO SOSTENIDO
+0317   00B2           00605                                 MOVWF           0X32
+0318   2???           00606                                 CALL            NOTA
+0319   2???           00607                                 GOTO            FIN
+                      00608 ;*************************FINNOTAS**************************
+031A   3001           00609 OCTAVA2                 MOVLW           .1
+031B   00C1           00610                                 MOVWF           0X41
+031C   0806           00611                                 MOVF            PORTB,W
+031D   3A0F           00612                                 XORLW           0X0F
+031E   1D03           00613                                 BTFSS           STATUS,Z
+031F   2???           00614                                 GOTO            $-3
+0320   2???           00615                                 CALL            REBOTE
+0321   2???           00616                                 GOTO            FIN
+                      00617 
+0322   3002           00618 OCTAVA3                 MOVLW           .2
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 19
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0323   00C1           00619                                 MOVWF           0X41
+0324   0806           00620                                 MOVF            PORTB,W
+0325   3A0F           00621                                 XORLW           0X0F
+0326   1D03           00622                                 BTFSS           STATUS,Z
+0327   2???           00623                                 GOTO            $-3
+0328   2???           00624                                 CALL            REBOTE
+0329   2???           00625                                 GOTO            FIN
+                      00626 
+032A   3004           00627 OCTAVA4                 MOVLW           .4
+032B   00C1           00628                                 MOVWF           0X41
+032C   0806           00629                                 MOVF            PORTB,W
+032D   3A0F           00630                                 XORLW           0X0F
+032E   1D03           00631                                 BTFSS           STATUS,Z
+032F   2???           00632                                 GOTO            $-3
+0330   2???           00633                                 CALL            REBOTE
+0331   2???           00634                                 GOTO            FIN
+                      00635 
+0332   3008           00636 OCTAVA5                 MOVLW           .8
+0333   00C1           00637                                 MOVWF           0X41
+0334   0806           00638                                 MOVF            PORTB,W
+0335   3A0F           00639                                 XORLW           0X0F
+0336   1D03           00640                                 BTFSS           STATUS,Z
+0337   2???           00641                                 GOTO            $-3
+0338   2???           00642                                 CALL            REBOTE
+0339   2???           00643                                 GOTO            FIN
+                      00644 
+033A   1683           00645 FIN                             BSF                     STATUS,RP0      ;B1
+033B   30F0           00646                                 MOVLW           0XF0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+033C   0086           00647                                 MOVWF           TRISB
+033D   1283           00648                                 BCF                     STATUS,RP0      ;B0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+033E   1381           00649                                 BCF                     OPTION_REG,.7
+033F   0806           00650                                 MOVF            PORTB,W
+0340   100B           00651                                 BCF                     INTCON,RBIF
+                      00652                                 
+                      00653                                 INCLUDE         <resupera.asm>
+0341   0872           00001                         MOVF            PC_R,W
+0342   008A           00002                         MOVWF           PCLATH
+0343   0E71           00003                         SWAPF           ST_R,W
+0344   0083           00004                         MOVWF           STATUS
+0345   0EF0           00005                         SWAPF           W_R,F
+0346   0E70           00006                         SWAPF           W_R,W
+0347   0009           00007                         RETFIE
+                      00654 
+                      00655 ;++++++++++++++++SUBRUTINAS++++++++++++++++++++++
+0348   1C41           00656 OCTAVA?                 BTFSS           0X41,0
+0349   2???           00657                                 GOTO            $+3
+034A   3000           00658                                 MOVLW           .0
+034B   2???           00659                                 GOTO            CARGA
+034C   1CC1           00660                                 BTFSS           0X41,1
+034D   2???           00661                                 GOTO            $+3
+034E   3001           00662                                 MOVLW           .1
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 20
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+034F   2???           00663                                 GOTO            CARGA
+0350   1D41           00664                                 BTFSS           0X41,2
+0351   2???           00665                                 GOTO            $+3
+0352   3002           00666                                 MOVLW           .2
+0353   2???           00667                                 GOTO            CARGA
+0354   1DC1           00668                                 BTFSS           0X41,3
+0355   2???           00669                                 GOTO            $+3
+0356   3003           00670                                 MOVLW           .3
+0357   2???           00671                                 GOTO            CARGA
+                      00672 
+0358   00C4           00673 CARGA                   MOVWF           0X44
+0359   0008           00674                                 RETURN
+                      00675 
+                      00676 
+035A   3032           00677 NOTA                    MOVLW           0X32
+035B   0084           00678                                 MOVWF           FSR
+035C   303D           00679                                 MOVLW           B'00111101'
+035D   0085           00680                                 MOVWF           PORTA
+                      00681 
+                      00682 
+035E   110B           00683 TONO                    BCF                     INTCON,T0IF                             
+035F   0842           00684                                 MOVF            0X42,W          ;OCTAVA
+0360   0081           00685                                 MOVWF           TMR0
+0361   0800           00686                                 MOVF            INDF,W          ;USURPADOR
+0362   0088           00687                                 MOVWF           PORTD
+0363   1D0B           00688                                 BTFSS           INTCON,T0IF
+0364   2???           00689                                 GOTO            $-3
+0365   0845           00690                                 MOVF            0X45,W
+0366   00C6           00691                                 MOVWF           0X46
+0367   0BC6           00692                                 DECFSZ          0X46,F
+0368   2???           00693                                 GOTO            $-1
+0369   0987           00694                                 COMF            PORTC,F
+036A   0E84           00695                                 SWAPF           FSR,F
+036B   0985           00696                                 COMF            PORTA,F
+036C   0805           00697                                 MOVF            PORTA,W
+036D   383C           00698                                 IORLW           B'00111100'
+036E   0085           00699                                 MOVWF           PORTA
+036F   0806           00700                                 MOVF            PORTB,W
+0370   3A0F           00701                                 XORLW           0X0F
+0371   1D03           00702                                 BTFSS           STATUS,Z
+0372   2???           00703                                 GOTO            TONO
+0373   2???           00704                                 CALL            REBOTE
+0374   0008           00705                                 RETURN
+2BE2 3FFF             00706                                 END
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 21
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ABDEN                             00000000
+ABDOVF                            00000007
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+ANS0                              00000000
+ANS1                              00000001
+ANS10                             00000002
+ANS11                             00000003
+ANS12                             00000004
+ANS13                             00000005
+ANS2                              00000002
+ANS3                              00000003
+ANS4                              00000004
+ANS5                              00000005
+ANS6                              00000006
+ANS7                              00000007
+ANS8                              00000000
+ANS9                              00000001
+ANSEL                             00000188
+ANSELH                            00000189
+ASCENDENTE                        00000130
+ASC_DES                           000001C1
+BAUDCTL                           00000187
+BCLIE                             00000003
+BCLIF                             00000003
+BF                                00000000
+BOTONES                           000001CA
+BRG0                              00000000
+BRG1                              00000001
+BRG10                             00000002
+BRG11                             00000003
+BRG12                             00000004
+BRG13                             00000005
+BRG14                             00000006
+BRG15                             00000007
+BRG16                             00000003
+BRG2                              00000002
+BRG3                              00000003
+BRG4                              00000004
+BRG5                              00000005
+BRG6                              00000006
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 22
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+BRG7                              00000007
+BRG8                              00000000
+BRG9                              00000001
+BRGH                              00000002
+C                                 00000000
+C1CH0                             00000000
+C1CH1                             00000001
+C1IE                              00000005
+C1IF                              00000005
+C1OE                              00000005
+C1ON                              00000007
+C1OUT                             00000006
+C1POL                             00000004
+C1R                               00000002
+C1RSEL                            00000005
+C1SEN                             00000005
+C2CH0                             00000000
+C2CH1                             00000001
+C2IE                              00000006
+C2IF                              00000006
+C2OE                              00000005
+C2ON                              00000007
+C2OUT                             00000006
+C2POL                             00000004
+C2R                               00000002
+C2REN                             00000004
+C2RSEL                            00000004
+C2SYNC                            00000000
+CARGA                             00000358
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1                             00000015
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2                             0000001B
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 23
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CHS0                              00000002
+CHS1                              00000003
+CHS2                              00000004
+CHS3                              00000005
+CKE                               00000006
+CKP                               00000004
+CM1CON0                           00000107
+CM2CON0                           00000108
+CM2CON1                           00000109
+CREN                              00000004
+CSRC                              00000007
+D                                 00000005
+DATA_ADDRESS                      00000005
+DC                                00000001
+DC1B0                             00000004
+DC1B1                             00000005
+DC2B0                             00000004
+DC2B1                             00000005
+DECRE2V                           000000E9
+DECRE3V                           000000F5
+DESCENDENTE                       0000016D
+DIS1                              00000024
+DIS2                              00000025
+DIS3                              00000026
+DIS4                              00000027
+DIS5                              00000028
+DIS6                              00000029
+DO                                0000024E
+DO#                               0000025F
+D_A                               00000005
+D_NOT_A                           00000005
+ECCPAS                            0000009C
+ECCPAS0                           00000004
+ECCPAS1                           00000005
+ECCPAS2                           00000006
+ECCPASE                           00000007
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDAT                             0000010C
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+F                                 00000001
+FA                                000002A3
+FA#                               000002B4
+FERR                              00000002
+FIN                               0000033A
+FINC                              00000210
+FINF                              000001F9
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 24
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+FSR                               00000004
+FUEC1                             00000203
+FUEC2                             00000207
+FUEC3                             0000020B
+FUEC4                             0000020F
+FUEF0                             000001EC
+FUEF1                             000001F0
+FUEF2                             000001F4
+FUEF3                             000001F8
+FVREN                             00000000
+GCEN                              00000007
+GIE                               00000007
+GO                                00000001
+GO_DONE                           00000001
+GO_NOT_DONE                       00000001
+HTS                               00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+INDF                              00000000
+INICIO                            000000FF
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IOCB                              00000096
+IOCB0                             00000000
+IOCB1                             00000001
+IOCB2                             00000002
+IOCB3                             00000003
+IOCB4                             00000004
+IOCB5                             00000005
+IOCB6                             00000006
+IOCB7                             00000007
+IRCF0                             00000004
+IRCF1                             00000005
+IRCF2                             00000006
+IRP                               00000007
+LA                                000002E7
+LA#                               000002F8
+LIMP_1                            0000012F
+LIMP_2                            0000012E
+LIMP_3                            0000012D
+LIMP_4                            0000012C
+LIMP_5                            0000012B
+LIMP_6                            0000012A
+LTS                               00000001
+MC1OUT                            00000007
+MC2OUT                            00000006
+MI                                00000292
+MOSTRAR                           0000019C
+MSK                               00000093
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 25
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+MSK0                              00000000
+MSK1                              00000001
+MSK2                              00000002
+MSK3                              00000003
+MSK4                              00000004
+MSK5                              00000005
+MSK6                              00000006
+MSK7                              00000007
+NOTA                              0000035A
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000001
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+NUEVE_1                           0000016B
+NUEVE_2                           00000169
+NUEVE_3                           00000167
+NUEVE_4                           00000165
+NUEVE_5                           00000163
+NUEVE_6                           00000161
+OCTAVA2                           0000031A
+OCTAVA3                           00000322
+OCTAVA4                           0000032A
+OCTAVA5                           00000332
+OCTAVA?                           00000348
+OERR                              00000001
+OPTION_REG                        00000081
+OSCCON                            0000008F
+OSCTUNE                           00000090
+OSFIE                             00000007
+OSFIF                             00000007
+OSTS                              00000003
+P                                 00000004
+P1M0                              00000006
+P1M1                              00000007
+PAUSA                             00000193
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PC_R                              00000072
+PDC0                              00000000
+PDC1                              00000001
+PDC2                              00000002
+PDC3                              00000003
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 26
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PDC4                              00000004
+PDC5                              00000005
+PDC6                              00000006
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PORTD                             00000008
+PORTE                             00000009
+PR2                               00000092
+PRSEN                             00000007
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+PSSAC0                            00000002
+PSSAC1                            00000003
+PSSBD0                            00000000
+PSSBD1                            00000001
+PSTRCON                           0000009D
+PULSR                             00000002
+PULSS                             00000003
+PWM1CON                           0000009B
+R                                 00000002
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RA5                               00000005
+RA6                               00000006
+RA7                               00000007
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RC0                               00000000
+RC1                               00000001
+RC2                               00000002
+RC3                               00000003
+RC4                               00000004
+RC5                               00000005
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 27
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RC6                               00000006
+RC7                               00000007
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIDL                             00000006
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+RD0                               00000000
+RD1                               00000001
+RD2                               00000002
+RD3                               00000003
+RD4                               00000004
+RD5                               00000005
+RD6                               00000006
+RD7                               00000007
+RE                                00000270
+RE#                               00000281
+RE0                               00000000
+RE1                               00000001
+RE2                               00000002
+RE3                               00000003
+READ_WRITE                        00000002
+REBOTE                            000001D9
+RECARGA3V                         000000F3
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RSI                               000001E9
+RX9                               00000006
+RX9D                              00000000
+R_NOT_W                           00000002
+R_W                               00000002
+S                                 00000003
+SBOREN                            00000004
+SCKP                              00000004
+SCS                               00000000
+SEN                               00000000
+SENDB                             00000003
+SI                                00000309
+SIETESEG                          0000000B
+SIETESEGK                         0000001C
+SMP                               00000007
+SOL                               000002C5
+SOL#                              000002D6
+SPBRG                             00000099
+SPBRGH                            0000009A
+SPEN                              00000007
+SR0                               00000006
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 28
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SR1                               00000007
+SRCON                             00000185
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPMSK                            00000093
+SSPOV                             00000006
+SSPSTAT                           00000094
+ST1V                              000000E1
+ST2V                              000000E7
+ST3V                              000000F1
+STATUS                            00000003
+STRA                              00000000
+STRB                              00000001
+STRC                              00000002
+STRD                              00000003
+STRSYNC                           00000004
+ST_R                              00000071
+SWDTEN                            00000000
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1GINV                            00000007
+T1GIV                             00000007
+T1GSS                             00000001
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TABLADO                           0000002D
+TABLADO#                          0000003C
+TABLADO#NOPS                      00000046
+TABLADONOPS                       00000037
+TABLADOPS                         00000032
+TABLADOPS#                        00000041
+TABLAFA                           00000078
+TABLAFA#                          00000087
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 29
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TABLAFA#NOPS                      00000091
+TABLAFANOPS                       00000082
+TABLAFAPS                         0000007D
+TABLAFAPS#                        0000008C
+TABLALA                           000000B4
+TABLALA#                          000000C3
+TABLALA#NOPS                      000000CD
+TABLALANOPS                       000000BE
+TABLALAPS                         000000B9
+TABLALAPS#                        000000C8
+TABLAMI                           00000069
+TABLAMINOPS                       00000073
+TABLAMIPS                         0000006E
+TABLARE                           0000004B
+TABLARE#                          0000005A
+TABLARE#NOPS                      00000064
+TABLARENOPS                       00000055
+TABLAREPS                         00000050
+TABLAREPS#                        0000005F
+TABLASI                           000000D2
+TABLASINOPS                       000000DC
+TABLASIPS                         000000D7
+TABLASOL                          00000096
+TABLASOL#                         000000A5
+TABLASOL#NOPS                     000000AF
+TABLASOLNOPS                      000000A0
+TABLASOLPS                        0000009B
+TABLASOLPS#                       000000AA
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1                              0000000E
+TMR1CS                            00000001
+TMR1GE                            00000006
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TONO                              0000035E
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 30
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TRISA4                            00000004
+TRISA5                            00000005
+TRISA6                            00000006
+TRISA7                            00000007
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+TRISC                             00000087
+TRISC0                            00000000
+TRISC1                            00000001
+TRISC2                            00000002
+TRISC3                            00000003
+TRISC4                            00000004
+TRISC5                            00000005
+TRISC6                            00000006
+TRISC7                            00000007
+TRISD                             00000088
+TRISD0                            00000000
+TRISD1                            00000001
+TRISD2                            00000002
+TRISD3                            00000003
+TRISD4                            00000004
+TRISD5                            00000005
+TRISD6                            00000006
+TRISD7                            00000007
+TRISE                             00000089
+TRISE0                            00000000
+TRISE1                            00000001
+TRISE2                            00000002
+TRISE3                            00000003
+TRMT                              00000001
+TUN0                              00000000
+TUN1                              00000001
+TUN2                              00000002
+TUN3                              00000003
+TUN4                              00000004
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+UA                                00000001
+ULPWUE                            00000005
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 31
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ULPWUIE                           00000002
+ULPWUIF                           00000002
+VCFG0                             00000004
+VCFG1                             00000005
+VR0                               00000000
+VR1                               00000001
+VR2                               00000002
+VR3                               00000003
+VRCON                             00000097
+VREN                              00000007
+VROE                              00000006
+VRR                               00000005
+VRSS                              00000004
+W                                 00000000
+WCOL                              00000007
+WDTCON                            00000105
+WDTPS0                            00000001
+WDTPS1                            00000002
+WDTPS2                            00000003
+WDTPS3                            00000004
+WPUB                              00000095
+WPUB0                             00000000
+WPUB1                             00000001
+WPUB2                             00000002
+WPUB3                             00000003
+WPUB4                             00000004
+WPUB5                             00000005
+WPUB6                             00000006
+WPUB7                             00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+WUE                               00000001
+W_R                               00000070
+Z                                 00000002
+_.org_1_0198                      00000198
+_.org_1_01C7                      000001C7
+_.org_1_01D6                      000001D6
+_.org_1_031F                      0000031F
+_.org_1_0327                      00000327
+_.org_1_032F                      0000032F
+_.org_1_0337                      00000337
+_.org_1_0349                      00000349
+_.org_1_034D                      0000034D
+_.org_1_0351                      00000351
+_.org_1_0355                      00000355
+_.org_1_0364                      00000364
+_.org_1_0368                      00000368
+_20E6                             000001DF
+_BOR21V                           00003EFF
+_BOR40V                           00003FFF
+_BOR4V_BOR21V                     00003EFF
+_BOR4V_BOR40V                     00003FFF
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 32
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_BOREN_NSLEEP                     00003EFF
+_BOREN_OFF                        00003CFF
+_BOREN_ON                         00003FFF
+_BOREN_SBODEN                     00003DFF
+_BOR_NSLEEP                       00003EFF
+_BOR_OFF                          00003CFF
+_BOR_ON                           00003FFF
+_BOR_SBODEN                       00003DFF
+_CONFIG1                          00002007
+_CONFIG2                          00002008
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003F7F
+_CP_OFF                           00003FFF
+_CP_ON                            00003FBF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         00001FFF
+_DEVID1                           00002006
+_EC_OSC                           00003FFB
+_EXTRC                            00003FFF
+_EXTRCIO                          00003FFE
+_EXTRC_OSC_CLKOUT                 00003FFF
+_EXTRC_OSC_NOCLKOUT               00003FFE
+_FCMEN_OFF                        000037FF
+_FCMEN_ON                         00003FFF
+_FOSC_EC                          00003FFB
+_FOSC_EXTRC_CLKOUT                00003FFF
+_FOSC_EXTRC_NOCLKOUT              00003FFE
+_FOSC_HS                          00003FFA
+_FOSC_INTRC_CLKOUT                00003FFD
+_FOSC_INTRC_NOCLKOUT              00003FFC
+_FOSC_LP                          00003FF8
+_FOSC_XT                          00003FF9
+_HS_OSC                           00003FFA
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_IESO_OFF                         00003BFF
+_IESO_ON                          00003FFF
+_INTOSC                           00003FFD
+_INTOSCIO                         00003FFC
+_INTRC_OSC_CLKOUT                 00003FFD
+_INTRC_OSC_NOCLKOUT               00003FFC
+_LP_OSC                           00003FF8
+_LVP_OFF                          00002FFF
+_LVP_ON                           00003FFF
+_MCLRE_OFF                        00003FDF
+_MCLRE_ON                         00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FEF
+_WDTE_OFF                         00003FF7
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FF7
+MPASM  5.49                        PRUEBA.ASM   6-2-2018  19:57:46         PAGE 33
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_WDT_ON                           00003FFF
+_WRT_1FOURTH                      00003BFF
+_WRT_256                          00003DFF
+_WRT_HALF                         000039FF
+_WRT_OFF                          00003FFF
+_XT_OSC                           00003FF9
+__16F887                          00000001
+__DEBUG                           1
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :    28 reported,     0 suppressed
+
+

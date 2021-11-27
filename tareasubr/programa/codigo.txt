@@ -1,0 +1,25 @@
+;******numero de ciclos maquina=980******
+;*****subrutina 1 variable******
+_1MS		MOVLW		.162
+			MOVWF		0X60
+			CALL		ST1V
+			RETURN
+;*****Numero de NOPs=3*********
+;*****subrutina 2 variables******
+_1MS		MOVLW		.97
+			MOVWF		0X61
+			MOVLW		.1
+			MOVWF		0X62
+			CALL		ST2V
+			RETURN
+;*****Numero de NOPs=3*********
+;*****subrutina 3 variables******
+_1MS		MOVLW		.5
+			MOVWF		0X64
+			MOVLW		.1
+			MOVWF		0X65
+			MOVLW		.19
+			MOVWF		0X66
+			CALL		ST3V
+			RETURN
+;*****Numero de NOPs=1*********
